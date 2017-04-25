@@ -1,0 +1,386 @@
+% This is "sig-alternate.tex" V2.1 April 2013
+% This file should be compiled with V2.5 of "sig-alternate.cls" May 2012
+%
+% This example file demonstrates the use of the 'sig-alternate.cls'
+% V2.5 LaTeX2e document class file. It is for those submitting
+% articles to ACM Conference Proceedings WHO DO NOT WISH TO
+% STRICTLY ADHERE TO THE SIGS (PUBS-BOARD-ENDORSED) STYLE.
+% The 'sig-alternate.cls' file will produce a similar-looking,
+% albeit, 'tighter' paper resulting in, invariably, fewer pages.
+%
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V2.5) produces:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) NO page numbers
+%
+% as against the acm_proc_article-sp.cls file which
+% DOES NOT produce 1) thru' 3) above.
+%
+% Using 'sig-alternate.cls' you have control, however, from within
+% the source .tex file, over both the CopyrightYear
+% (defaulted to 200X) and the ACM Copyright Data
+% (defaulted to X-XXXXX-XX-X/XX/XX).
+% e.g.
+% \CopyrightYear{2007} will cause 2007 to appear in the copyright line.
+% \crdata{0-12345-67-8/90/12} will cause 0-12345-67-8/90/12 to appear in the copyright line.
+%
+% ---------------------------------------------------------------------------------------------------------------
+% This .tex source is an example which *does* use
+% the .bib file (from which the .bbl file % is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission, you *NEED* to 'insert'
+% your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% ================= IF YOU HAVE QUESTIONS =======================
+% Questions regarding the SIGS styles, SIGS policies and
+% procedures, Conferences etc. should be sent to
+% Adrienne Griscti (griscti@acm.org)
+%
+% Technical questions _only_ to
+% Gerald Murray (murray@hq.acm.org)
+% ===============================================================
+%
+% For tracking purposes - this is V2.0 - May 2012
+
+\documentclass{sig-alternate-10pt}
+%\documentclass{sig-alternate-05-2015}
+
+\begin{document}
+
+% Copyright
+%%%\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+%\setcopyright{rightsretained}
+%\setcopyright{usgov}
+%\setcopyright{usgovmixed}
+%\setcopyright{cagov}
+%\setcopyright{cagovmixed}
+
+
+% DOI
+%%%\doi{10.475/123_4}
+
+% ISBN
+%%%\isbn{123-4567-24-567/08/06}
+
+%Conference
+\conferenceinfo{PLDI '13}{June 16--19, 2013, Seattle, WA, USA}
+
+%%%\acmPrice{\$15.00}
+
+%
+% --- Author Metadata here ---
+\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
+%\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
+%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
+% --- End of Author Metadata ---
+
+%\title{Alternate {\ttlit ACM} SIG Proceedings Paper in LaTeX
+%Format\titlenote{(Produces the permission block, and
+%copyright information). For use with
+%SIG-ALTERNATE.CLS. Supported by ACM.}}
+%\subtitle{[Extended Abstract]
+%\titlenote{A full version of this paper is available as
+%\textit{Author's Guide to Preparing ACM SIG Proceedings Using
+%\LaTeX$2_\epsilon$\ and BibTeX} at
+%\texttt{www.acm.org/eaddress.htm}}}
+
+\title{NI: A Benchmark Suite for NfvInsight}
+
+%
+% You need the command \numberofauthors to handle the 'placement
+% and alignment' of the authors beneath the title.
+%
+% For aesthetic reasons, we recommend 'three authors at a time'
+% i.e. three 'name/affiliation blocks' be placed beneath the title.
+%
+% NOTE: You are NOT restricted in how many 'rows' of
+% "name/affiliations" may appear. We just ask that you restrict
+% the number of 'columns' to three.
+%
+% Because of the available 'opening page real-estate'
+% we ask you to refrain from putting more than six authors
+% (two rows with three columns) beneath the article title.
+% More than six makes the first-page appear very cluttered indeed.
+%
+% Use the \alignauthor commands to handle the names
+% and affiliations for an 'aesthetic maximum' of six authors.
+% Add names, affiliations, addresses for
+% the seventh etc. author(s) as the argument for the
+% \additionalauthors command.
+% These 'additional authors' will be output/set for you
+% without further effort on your part as the last section in
+% the body of your article BEFORE References or any Appendices.
+
+%\numberofauthors{5} %  in this sample file, there are a *total*
+%% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+%% reasons) and the remaining two appear in the \additionalauthors section.
+%%
+%\author{
+%% You can go ahead and credit any number of authors here,
+%% e.g. one 'row of three' or two rows (consisting of one row of three
+%% and a second row of one, two or three).
+%%
+%% The command \alignauthor (no curly braces needed) should
+%% precede each author name, affiliation/snail-mail address and
+%% e-mail address. Additionally, tag each line of
+%% affiliation/address with \affaddr, and tag the
+%% e-mail address with \email.
+%%
+%% 1st. author
+%\alignauthor
+%Ben Trovato\titlenote{Dr.~Trovato insisted his name be first.}\\
+%       \affaddr{Institute for Clarity in Documentation}\\
+%       \affaddr{1932 Wallamaloo Lane}\\
+%       \affaddr{Wallamaloo, New Zealand}\\
+%       \email{trovato@corporation.com}
+%% 2nd. author
+%\alignauthor
+%G.K.M. Tobin\titlenote{The secretary disavows
+%any knowledge of this author's actions.}\\
+%       \affaddr{Institute for Clarity in Documentation}\\
+%       \affaddr{P.O. Box 1212}\\
+%       \affaddr{Dublin, Ohio 43017-6221}\\
+%       \email{webmaster@marysville-ohio.com}
+%% 3rd. author
+%\alignauthor Lars Th{\o}rv{\"a}ld\titlenote{This author is the
+%one who did all the really hard work.}\\
+%       \affaddr{The Th{\o}rv{\"a}ld Group}\\
+%       \affaddr{1 Th{\o}rv{\"a}ld Circle}\\
+%       \affaddr{Hekla, Iceland}\\
+%       \email{larst@affiliation.org}
+%\and  % use '\and' if you need 'another row' of author names
+%% 4th. author
+%\alignauthor Lawrence P. Leipuner\\
+%       \affaddr{Brookhaven Laboratories}\\
+%       \affaddr{Brookhaven National Lab}\\
+%       \affaddr{P.O. Box 5000}\\
+%       \email{lleipuner@researchlabs.org}
+%% 5th. author
+%\alignauthor Sean Fogarty\\
+%       \affaddr{NASA Ames Research Center}\\
+%       \affaddr{Moffett Field}\\
+%       \affaddr{California 94035}\\
+%       \email{fogartys@amesres.org}
+%}
+
+% There's nothing stopping you putting the seventh, eighth, etc.
+% author on the opening page (as the 'third row') but we ask,
+% for aesthetic reasons that you place these 'additional authors'
+% in the \additional authors block, viz.
+%\additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
+%email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
+%(The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
+%\date{30 July 1999}
+% Just remember to make sure that the TOTAL number of authors
+% is the number that will appear on the first page PLUS the
+% number that will appear in the \additionalauthors section.
+
+\maketitle
+\begin{abstract}
+
+\end{abstract}
+
+
+%
+% The code below should be generated by the tool at
+% http://dl.acm.org/ccs.cfm
+% Please copy and paste the code instead of the example below. 
+%
+%%%\begin{CCSXML}
+%%%<ccs2012>
+%%% <concept>
+%%%  <concept_id>10010520.10010553.10010562</concept_id>
+%%%  <concept_desc>Computer systems organization~Embedded systems</concept_desc>
+%%%  <concept_significance>500</concept_significance>
+%%% </concept>
+%%% <concept>
+%%%  <concept_id>10010520.10010575.10010755</concept_id>
+%%%  <concept_desc>Computer systems organization~Redundancy</concept_desc>
+%%%  <concept_significance>300</concept_significance>
+%%% </concept>
+%%% <concept>
+%%%  <concept_id>10010520.10010553.10010554</concept_id>
+%%%  <concept_desc>Computer systems organization~Robotics</concept_desc>
+%%%  <concept_significance>100</concept_significance>
+%%% </concept>
+%%% <concept>
+%%%  <concept_id>10003033.10003083.10003095</concept_id>
+%%%  <concept_desc>Networks~Network reliability</concept_desc>
+%%%  <concept_significance>100</concept_significance>
+%%% </concept>
+%%%</ccs2012>  
+%%%\end{CCSXML}
+
+%%%\ccsdesc[500]{Computer systems organization~Embedded systems}
+%%%\ccsdesc[300]{Computer systems organization~Redundancy}
+%%%\ccsdesc{Computer systems organization~Robotics}
+%%%\ccsdesc[100]{Networks~Network reliability}
+
+
+%
+% End generated code
+%
+
+%
+%  Use this command to print the description
+%
+%%%\printccsdesc
+
+% We no longer use \terms command
+%\terms{Theory}
+
+\keywords{Network Function Virtualization; }
+
+\section{Introduction}
+
+Network function virtualization (NFV) has become a hot topic, both in industry and academia. Since the publication of NFV Introductory White Paper [] of ETSI in 2012, a lot of works have been emerged in this field. Modification works of NFV were done on the whole software stack (or maybe both SW and HW stack?). There are de facto industrial NFV platform OPNFV [] as well as advanced NF allocation frameworks like OpenNF [], CoMb [] and E2 []. Also, there are works like OpenBox [] and Netbricks [] to rewrite or modify the NFs.
+
+However, a suite of easy-to-use NFV benchmark is not yet existed. It is unavoidable to experience a time consuming process finding both open source software and proper chaining policies. According to our observation, most NFs used in papers are different open source implementations linked in different kinds of NF chain policies. So that, there is not yet a general baseline for measurement and comparison. Furthermore, the workload generator and network traffic trace used are also different, and real-world traces need to be provided to test different NF chains.
+
+We also did a survey among top conference researchers who have experiences setting up NFV environment. In our survey, we found that the deploying time varies much due to the scale. In average, it takes around 1 month to build up a NF cluster having less than 10 VM instances. But when the scale of instances increase to over 50, the build up process can take 3-4 months or more. One of our respondent said that they were still keeping on iterating and improving their testbed constantly.
+
+There are more complains pointing out their pain points: 1) Automate the setting up and testing process. 2) Configure and stabilize NFs (?). 3) Write rules to set up topology and enforce flow control.
+
+In this paper, we develop a suite of NF benchmarks, which is supposed to have the following characteristics: 1) Representing typical NFs 2) Easy to deploy 3) Plenty metrics for measurement (please specify)
+
+For the demand of representative NFs, we referred to the NFV Introductory White Paper [], which defined eight scenario of NFV use cases. Then we collected open source implementations accordingly. Table ? lists the scenarios and the information of NFs used in our benchmark. However, not only single NFs should be typical, but also the NF chains. We consulted industrial partners for the real world scenarios including (..) traditional middle boxes (and VoIP services). The typical NF chains are listed in Table ?.
+
+For the demand of easy to deploy, we hope to achieve the goal of one-click installation, and reduce the setting up time to less than 1 week no matter the scale of the testing environment. (what’s the user interface like?) We leverage Docker and Kubernets to pack NFs in containers, manage the images, and do allocation automatically. We use OVS to do switching, and leverage pre-written scripts and Openflow rules to implement chaining and flow control. 
+
+We leverage the monitoring function of Kubernets and provide metrics for measurement.
+
+\section{Background and Motivation}
+
+\subsection{Network Function Virtualization}
+
+
+\subsection{Survey}
+
+\cite{salas:calculus, Lamport:LaTeX}
+
+
+\section{ Benchmark Description}
+
+
+\begin{table}
+\centering
+\caption{Frequency of Special Characters}
+\begin{tabular}{|c|c|l|} \hline
+Non-English or Math&Frequency&Comments\\ \hline
+\O & 1 in 1,000& For Swedish names\\ \hline
+$\pi$ & 1 in 5& Common in math\\ \hline
+\$ & 4 in 5 & Used in business\\ \hline
+$\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
+\hline\end{tabular}
+\end{table}
+
+
+
+\begin{table*}
+\centering
+\caption{Some Typical Commands}
+\begin{tabular}{|c|c|l|} \hline
+Command&A Number&Comments\\ \hline
+\texttt{{\char'134}alignauthor} & 100& Author alignment\\ \hline
+\texttt{{\char'134}numberofauthors}& 200& Author enumeration\\ \hline
+\texttt{{\char'134}table}& 300 & For tables\\ \hline
+\texttt{{\char'134}table*}& 400& For wider tables\\ \hline\end{tabular}
+\end{table*}
+% end the environment with {table*}, NOTE not {table}!
+
+\section{Implementation}
+
+\section{Evaluation}
+
+\begin{figure*}
+\centering
+\includegraphics{flies}
+\caption{A sample black and white graphic
+that needs to span two columns of text.}
+\end{figure*}
+
+
+
+\begin{figure}
+\centering
+\includegraphics[height=1in, width=1in]{rosette}
+\caption{A sample black and white graphic that has
+been resized with the \texttt{includegraphics} command.}
+\vskip -6pt
+\end{figure}
+
+
+\section{Conclusions}
+
+%\end{document}  % This is where a 'short' article might terminate
+
+%ACKNOWLEDGMENTS are optional
+\section{Acknowledgments}
+
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+\bibliography{sigproc}  % sigproc.bib is the name of the Bibliography in this case
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+%APPENDICES are optional
+%\balancecolumns
+%\appendix
+%%Appendix A
+%\section{Headings in Appendices}
+%The rules about hierarchical headings discussed above for
+%the body of the article are different in the appendices.
+%In the \textbf{appendix} environment, the command
+%\textbf{section} is used to
+%indicate the start of each Appendix, with alphabetic order
+%designation (i.e. the first is A, the second B, etc.) and
+%a title (if you include one).  So, if you need
+%hierarchical structure
+%\textit{within} an Appendix, start with \textbf{subsection} as the
+%highest level. Here is an outline of the body of this
+%document in Appendix-appropriate form:
+%\subsection{Introduction}
+%\subsection{The Body of the Paper}
+%\subsubsection{Type Changes and  Special Characters}
+%\subsubsection{Math Equations}
+%\paragraph{Inline (In-text) Equations}
+%\paragraph{Display Equations}
+%\subsubsection{Citations}
+%\subsubsection{Tables}
+%\subsubsection{Figures}
+%\subsubsection{Theorem-like Constructs}
+%\subsubsection*{A Caveat for the \TeX\ Expert}
+%\subsection{Conclusions}
+%\subsection{Acknowledgments}
+%\subsection{Additional Authors}
+%This section is inserted by \LaTeX; you do not insert it.
+%You just add the names and information in the
+%\texttt{{\char'134}additionalauthors} command at the start
+%of the document.
+%\subsection{References}
+%Generated by bibtex from your ~.bib file.  Run latex,
+%then bibtex, then latex twice (to resolve references)
+%to create the ~.bbl file.  Insert that ~.bbl file into
+%the .tex source file and comment out
+%the command \texttt{{\char'134}thebibliography}.
+%% This next section command marks the start of
+%% Appendix B, and does not continue the present hierarchy
+%\section{More Help for the Hardy}
+%The sig-alternate.cls file itself is chock-full of succinct
+%and helpful comments.  If you consider yourself a moderately
+%experienced to expert user of \LaTeX, you may find reading
+%it useful but please remember not to change it.
+%%\balancecolumns % GM June 2007
+%% That's all folks!
+\end{document}
