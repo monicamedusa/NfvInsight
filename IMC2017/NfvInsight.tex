@@ -47,6 +47,7 @@
 
 \documentclass{sig-alternate-10pt}
 %\documentclass{sig-alternate-05-2015}
+\usepackage{url}
 
 \begin{document}
 
@@ -181,7 +182,27 @@
 
 \maketitle
 \begin{abstract}
-
+NFV is attracting more and more interest in both industry and academia. 
+It is promising to reduce cost for network operators and accelerate innovation 
+by replacing traditional hardware-base appliance with virtualized functions 
+deploying in cloud computing environment.
+NFV testing environment deploying 
+involves multiple layers in the software stack including 
+VNF image packaging, virtualization management, 
+network configuration, forwarding rule installation, 
+and performance metric measurement. 
+According to our survey, 
+it takes averagely 1-2 human-month to set up a testing environment.
+Motivated by the time taking process of deployment, 
+we decided to develop a easy-to-use NFV benchmark named NfvInsight.
+The benchmark has three key features: 
+1) Representative NFs 
+2) One-click running 
+3) Plenty metrics for measurement. 
+NI include 5 VNF covering half of the NFV use cases, 
+and provide typical NF chaining policies. 
+NI leverages Kubernetes and Docker to do infrastructure management, 
+and OVS to control data flow.
 \end{abstract}
 
 
@@ -237,20 +258,28 @@
 
 \section{Introduction}
 
-Network function virtualization (NFV) has become a hot topic, both in industry and academia. Since the publication of NFV Introductory White Paper \cite{} of ETSI in 2012, a lot of works have been emerged in this field. Modification works of NFV were done on the whole software stack (or maybe both SW and HW stack?). There are de facto industrial NFV platform OPNFV \cite{} as well as advanced NF allocation frameworks like OpenNF \cite{}, CoMb \cite{} and E2 \cite{}. Also, there are works like OpenBox \cite{} and Netbricks \cite{} to rewrite or modify the NFs.
+Network function virtualization (NFV) has become a hot topic, both in industry and academia. Since the publication of NFV Introductory White Paper \cite{} of ETSI in 2012, a lot of works have been emerged in this field. Modification works of NFV were done on the whole software stack (or maybe both SW and HW stack?). There are de facto industrial NFV platform OPNFV \cite{noauthor_home_nodate} as well as advanced NF allocation frameworks like OpenNF \cite{gember-jacobson_opennf:_2014}, CoMb \cite{180672} and E2 \cite{palkar_e2:_2015}. Also, there are works like OpenBox \cite{bremler-barr_openbox:_2016} and Netbricks \cite{199352} to rewrite or modify the NFs.
+
+%Embark\cite{194934}
+%StateAlyzer\cite{194932}
+%Split/Merge\cite{180307}
+%ClickOS\cite{179771}
+%APLOMB\cite{sherry_making_2012}
+%FTMB\cite{sherry_rollback-recovery_2015}
+%DFC\cite{194970}
 
 However, a suite of easy-to-use NFV benchmark is not yet existed. It is unavoidable to experience a time consuming process finding both open source software and proper chaining policies. According to our observation, most NFs used in papers are different open source implementations linked in different kinds of NF chain policies. So that, there is not yet a general baseline for measurement and comparison. Furthermore, the workload generator and network traffic trace used are also different, and real-world traces need to be provided to test different NF chains.
 
 We also did a survey among top conference researchers who have experiences setting up NFV environment. In our survey, we found that the deploying time varies much due to the scale. In average, it takes around 1 month to build up a NF cluster having less than 10 VM instances. But when the scale of instances increase to over 50, the build up process can take 3-4 months or more. One of our respondent said that they were still keeping on iterating and improving their testbed constantly.
 
 There are more complains pointing out their pain points: 1) Automate the setting up and testing process. 2) Configure and stabilize NFs (?). 3) Write rules to set up topology and enforce flow control.
+%our design to solve the pain points????
 
 In this paper, we develop a suite of NF benchmarks, which is supposed to have the following characteristics: 1) Representing typical NFs 2) Easy to use 3) Plenty metrics for measurement.
 
 According to our research and observation, 
 the representative of an NFV benchmark 
 should be satisfied in three aspects:
-
 %\begin{itemize}
 %\begin{enumerate}
 %\item{\textbf{Representative NFs.}}
@@ -261,12 +290,12 @@ which defined ten scenario of NFV use cases.
 In the first version of our benchmark, 
 the open source implementation of NFs we collected 
 covers half of the ten use cases. 
-Table \ref{} lists the basic information of NFs used in our benchmark. 
+Table \ref{nfs} lists the basic information of NFs used in our benchmark. 
 %\item{\textbf{Representative NF chains.}}
 \textbf{2) Representative NF chains.}
 However, not only single NFs should be typical, but also the NF chains. 
 We referred to ETSI standard documents of SFC 
-(Service Function Chaining) \cite{?????} 
+(Service Function Chaining) \cite{} 
 for the typical use case of service chains 
 in the scenarios of both enterprise user and datacenter.
 We also consulted our industrial partners for real world chaining policies. 
@@ -279,6 +308,7 @@ So we select different clients for each chain.
 %and fixed the content of each chain.
 %\end{itemize}
 %\end{enumerate}
+
 
 The goal of the `easy to use' design is to 
 achieve one-week setting up as well as one-click test running, 
@@ -298,24 +328,42 @@ that is latency and throughput.
 We measure latency in the granularity of per-packet and per-NF, 
 and output cumulative distribution of latency in the measurement report. 
 
-The main contribution of our work is 
+%The main contribution of our work is 
 
 \section{Background and Motivation}
-The idea of our work is based on an observation that 
+
 
 \subsection{Network Function Virtualization}
+NFV involves multi-layers in the whole software stack, 
+
+The concept of NFV chain
 
 \subsection{A Survey of NFV Testing Environment \\Deploying}
-To further prove our observation, 
+%To further prove our observation, 
+To get first-hand information about researchers' experience on 
+NFV testing environment deploying, 
 we did a survey among top conference authors 
-dedication in the field of NFV. 
+dedicated in the field of NFV. 
 We delivered the survey to sixteen people 
-who are the first authors of papers published on top conferences 
+who are the first authors of their papers %published on top conferences 
 and we finally collected eight responses. 
 
-The question we concerned most is 
+In the first place, we asked for the number of types of VNF they used, 
+and the source of VNF, chaining policy and workload generator. 
+Averagely, six types of VNF are used in one paper. 
+Most of the VNF are open source implementations, 
+though three of our respondents have written their own VNF. 
+%a list of open source NFs found in papers??
+The chaining policies are all find in papers or public policies. 
+And for the workload generator, 
+half of them directly used open source software, 
+and half of them wrote by themselves.
+%need some conclusion?
+
+Another question we concerned most is 
 the time they spent on deploying a NFV testing environment. 
-To precisely measure the labor time, we use the metric of man-month 
+To more precisely measure the labor time, 
+we use the metric of man-month 
 which indicates the number of months used 
 if the work is done by one person. 
 We also asked for the scale of physical servers and VM instances, 
@@ -331,10 +379,10 @@ The result is shown in Table \ref{survey}.
 2 & 0.5-1 & 2 & 1-5 & Hyper-V\\\hline
 3 & 0.5-1 & 4 & 1-7 & Container\\\hline
 4 & 0.5-1 & 4 & 6-10 & KVM\\\hline
-5 & 1-2 & 4 & 6-10 & \tabincell{c}{KVM, Container\\and other}\\\hline
+5 & 1-2 & 4 & 6-10 & \tabincell{c}{Container,\\KVM and other}\\\hline
 6 & 4 & 10 & 100 & KVM\\\hline
-7 & 6 & 24 & 72 & KVM\\\hline
-8 & 6 & 4 & 1-5 & Xen\\\hline
+7 & \tabincell{c}{3 \& broken\\into pieces} & 24 & 72 & KVM\\\hline
+8 & \tabincell{c}{Constantly\\Iterating} & 4 & 1-5 & Xen\\\hline
 \end{tabular}
 \caption{The result of our survey reflects the relationship 
 between labor consuming and the scale of the testing environment.}
@@ -342,67 +390,155 @@ between labor consuming and the scale of the testing environment.}
 \end{table}
 
 From the responses, we can see the average time 
-to deploy a testing environment for NFV is around 1-2 months.
+to deploy a testing environment for NFV is around 1-2 months 
+for a cluster not in very large scale.
 It can be quite fast for a experienced person, 
 as the responser No.1, who used less than half a month 
 setting up a cluster including 4 physical servers and 11-20 VMs. 
 However, for the others, the deploying process 
 can be time taking and painful.
+Take respondent No.6 and No.7 as examples, 
+they built their test environment in quite large scale,
+and it results in much longer setting up time. 
+
+NFV setting up involves multi-layers in the whole software stack, 
+which includes virtualization, cluster management, 
+network virtualization, and NF configuration, 
+so that any point can become a bottleneck, 
+especially for a green hand. 
+Take respondent No.8 as an example, 
+Most problems they encountered are related to the hypervisor they used. 
+And respondent No.7 said they changed from Xen 
+to KVM with Openstack and things got much better.
+We asked the authors for their most painful experiences, 
+and we summarize the reasons making the setting up time so long 
+as the following: 
 
 \begin{itemize}
-\item[]{}
-We wrote a bunch of scripts that simplified most of the process. The primary trouble was in figuring out how to determine that NFs were done starting up and ready to forward packets.
+\item[-]{}
+Automating the process of setting up the testbed. 
+\item[-]{}
+Setting up the datapath (interfaces, DPDK, routing tables, etc).
+\item[-]{}
+Installing proper rules in OpenFlow-enabled switches to enforce chaining.
+\item[-]{}
+Figure out appropriate workload to test different types of VNFs.
+\item[-]{}
+Figuring out how to determine that NFs were done starting up and ready to forward packets. 
 \end{itemize}
 
+%Automating the process of setting up the testbed end to end took us a lot of time and many iterations.
+%%No.4
+%
+%We wrote a bunch of scripts that simplified most of the process. The primary trouble was in figuring out how to determine that NFs were done starting up and ready to forward packets.
+%
+%Two parts for me:
+%1. Install, configure and stabilize the open-source software, especially under heavy workload.
+%2. Figure out appropriate workload to test different types of VNFs. It would be great if there is some real-world traffic/workload traces.
+%
+%Traffic generation and topology configuration
+%
+%Setting up the datapath (interfaces, DPDK, routing tables, etc)
+%Installing proper rules in OpenFlow-enabled switches to enforce chaining
 
+One of our responser pointed out that:
 \begin{itemize}
 \item[]{}
-Automating the process of setting up the testbed end to end took us a lot of time and many iterations.
-\end{itemize}
-
-
-\begin{itemize}
-\item[]{}
-Two parts for me:
-1. Install, configure and stabilize the open-source software, especially under heavy workload.
-2. Figure out appropriate workload to test different types of VNFs. It would be great if there is some real-world traffic/workload traces.
-\end{itemize}
-
-Traffic generation and topology configuration
-
-Setting up the datapath (interfaces, DPDK, routing tables, etc)
-
 If there is a system that will take as input key parameters (e.g., number of nodes, topology, VM images, choice of hypervisor) and then automatically generates a ready to go set up, that will be of a huge value!
+%!!!!but actually, we cannot...
+\end{itemize}
+This suggestion firms our intention to publish an NFV benchmark 
+which provides typical NF services and workload generator, 
+automatically run the test according to user configurations, 
+and  reports the measurement results in the end.
 
-Installing proper rules in OpenFlow-enabled switches to enforce chaining
-
-The setup significantly evolved overtime and became much easier to manage when switching from a home-brewed Xen setup to OpenStack
 
 \section{ Benchmark Description}
-\subsection{Overview}
-%The goal and challenges of the work
-Representative NF
-K8s+ovs
-measurement
-Since NFV involves multi-layers in the whole software stack, 
-it is insufficient only providing several software implementations. 
 
 \begin{figure}[t]
 \label{design}
 \centering
-\includegraphics[width=3.3in]{design.pdf}
+\includegraphics[width=3.3in]{design2.pdf}
 \caption{An overview of our benchmark design.}
 \end{figure}
 
-\subsection{Design}
-%Framework
-Connection test
+\subsection{Overview}
+According to our research and survey, 
+we found that a suite of easy-to-use NFV benchmark is indeed. 
+First, for all these researches, a universally used baseline is lacked 
+for comparison experiments.
+So, a selected suite of representative VNF 
+with widely accepted chaining policy 
+and proper workload generator is needed.
+%The idea of our work is based on an observation that 
+Second, a well-designed benchmark with a bunch of pre-written scripts to automate the deployment process can effectively save time.
+Since NFV involves multi-layers in the whole software stack, 
+the automation process includes VNF image packaging, 
+NF allocation, networking config, forwarding rules installation, 
+connection testing, and metrics measurement.
+%The goal and challenges of the work
+
+The goal of our work is to provide a benchmark suite 
+with the following three characteristics: 
+1) Representing typical NFs 2) Easy to use 3) Plenty metrics for measurement.
+
+Representative NF
+
+K8s+ovs
+
+measurement
+
 
 \subsection{NF}
-We select NFs which needs no modification of the kernel.
-Most promising NFV use cases.
+Most prevalent NFV use cases.
 
-\cite{salas:calculus, Lamport:LaTeX}
+We select NFs which needs no modification of the kernel.
+
+config NF to work in the way as demanded 
+
+Clearwater\cite{noauthor_project_nodate}
+
+\begin{table}[!t]
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\centering
+\begin{tabular}{|c|c|}\hline
+\textbf{Category} & \textbf{NF} \\\hline
+IMS & Clearwater \\\hline
+IDS & Snort \\\hline
+NAT & iptables \\\hline
+L4 Load Balancer & Haproxy \\\hline
+L7 Cache & Squid \\\hline
+\end{tabular}
+\caption{NFs included in our benchmark.}
+\label{nfs}
+\end{table}
+
+
+
+\subsection{Design}
+%Framework
+%for ppl from network field
+To achieve the demand of easy to use, 
+users are supposed to run only one command to start the test, 
+and touch only two files, 
+which are the configuration file and the measurement report. 
+The process to use the benchmark includes five steps:
+\begin{itemize}
+\item[]{}Step1 Pre-install 
+\item[]{}Step2 Build images
+\item[]{}Step3 Write config file
+\item[]{}Step4 One click running
+\item[]{}Step5 Get the report
+\end{itemize}
+
+
+
+Figure \ref{design} shows 
+
+
+Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
+
+Connection test
 
 
 
@@ -425,7 +561,7 @@ Most promising NFV use cases.
 % initial runs of your .tex file to
 % produce the bibliography for the citations in your paper.
 \bibliographystyle{abbrv}
-\bibliography{sigproc}  % sigproc.bib is the name of the Bibliography in this case
+\bibliography{NFV_bib,NFV}  % sigproc.bib is the name of the Bibliography in this case
 % You must have a proper ".bib" file
 %  and remember to run:
 % latex bibtex latex latex

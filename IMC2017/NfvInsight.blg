@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: NfvInsight.aux
+The style file: abbrv.bst
+Database file #1: NFV_bib.bib
+Database file #2: NFV.bib
+Warning--to sort, need author or key in noauthor_home_nodate
+Warning--to sort, need author or key in noauthor_project_nodate
+You've used 14 entries,
+            2118 wiz_defined-function locations,
+            580 strings with 7241 characters,
+and the built_in function-call counts, 7378 in all, are:
+= -- 762
+> -- 398
+< -- 12
++ -- 158
+- -- 144
+* -- 531
+:= -- 1115
+add.period$ -- 52
+call.type$ -- 14
+change.case$ -- 114
+chr.to.int$ -- 0
+cite$ -- 16
+duplicate$ -- 288
+empty$ -- 512
+format.name$ -- 144
+if$ -- 1636
+int.to.chr$ -- 0
+int.to.str$ -- 14
+missing$ -- 12
+newline$ -- 71
+num.names$ -- 24
+pop$ -- 138
+preamble$ -- 1
+purify$ -- 100
+quote$ -- 0
+skip$ -- 233
+stack$ -- 0
+substring$ -- 446
+swap$ -- 120
+text.length$ -- 12
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 56
+warning$ -- 2
+while$ -- 60
+width$ -- 16
+write$ -- 177
+(There were 2 warnings)

@@ -1,0 +1,100 @@
+\begin{thebibliography}{10}
+
+\bibitem{noauthor_home_nodate}
+Opnfv.
+\newblock \url{https://www.opnfv.org/}.
+
+\bibitem{noauthor_project_nodate}
+Project {Clearwater}.
+\newblock \url{http://www.projectclearwater.org/}.
+
+\bibitem{bremler-barr_openbox:_2016}
+A.~Bremler-Barr, Y.~Harchol, and D.~Hay.
+\newblock {OpenBox}: {A} {Software}-{Defined} {Framework} for {Developing},
+  {Deploying}, and {Managing} {Network} {Functions}.
+\newblock In {\em Proceedings of the 2016 {ACM} {SIGCOMM} {Conference}},
+  {SIGCOMM} '16, pages 511--524, New York, NY, USA, 2016. ACM.
+
+\bibitem{194970}
+B.~Choi, J.~Chae, M.~Jamshed, K.~Park, and D.~Han.
+\newblock Dfc: Accelerating string pattern matching for network applications.
+\newblock In {\em 13th USENIX Symposium on Networked Systems Design and
+  Implementation (NSDI 16)}, pages 551--565, Santa Clara, CA, 2016. USENIX
+  Association.
+
+\bibitem{gember-jacobson_opennf:_2014}
+A.~Gember-Jacobson, R.~Viswanathan, C.~Prakash, R.~Grandl, J.~Khalid, S.~Das,
+  and A.~Akella.
+\newblock {OpenNF}: {Enabling} {Innovation} in {Network} {Function} {Control}.
+\newblock In {\em Proceedings of the 2014 {ACM} {Conference} on {SIGCOMM}},
+  {SIGCOMM} '14, pages 163--174, New York, NY, USA, 2014. ACM.
+
+\bibitem{194932}
+J.~Khalid, A.~Gember-Jacobson, R.~Michael, A.~Abhashkumar, and A.~Akella.
+\newblock Paving the way for nfv: Simplifying middlebox modifications using
+  statealyzr.
+\newblock In {\em 13th USENIX Symposium on Networked Systems Design and
+  Implementation (NSDI 16)}, pages 239--253, Santa Clara, CA, 2016. USENIX
+  Association.
+
+\bibitem{194934}
+C.~Lan, J.~Sherry, R.~A. Popa, S.~Ratnasamy, and Z.~Liu.
+\newblock Embark: Securely outsourcing middleboxes to the cloud.
+\newblock In {\em 13th USENIX Symposium on Networked Systems Design and
+  Implementation (NSDI 16)}, pages 255--273, Santa Clara, CA, 2016. USENIX
+  Association.
+
+\bibitem{179771}
+J.~Martins, M.~Ahmed, C.~Raiciu, V.~Olteanu, M.~Honda, R.~Bifulco, and
+  F.~Huici.
+\newblock Clickos and the art of network function virtualization.
+\newblock In {\em 11th USENIX Symposium on Networked Systems Design and
+  Implementation (NSDI 14)}, pages 459--473, Seattle, WA, 2014. USENIX
+  Association.
+
+\bibitem{palkar_e2:_2015}
+S.~Palkar, C.~Lan, S.~Han, K.~Jang, A.~Panda, S.~Ratnasamy, L.~Rizzo, and
+  S.~Shenker.
+\newblock E2: {A} {Framework} for {NFV} {Applications}.
+\newblock In {\em Proceedings of the 25th {Symposium} on {Operating} {Systems}
+  {Principles}}, {SOSP} '15, pages 121--136, New York, NY, USA, 2015. ACM.
+
+\bibitem{199352}
+A.~Panda, S.~Han, K.~Jang, M.~Walls, S.~Ratnasamy, and S.~Shenker.
+\newblock Netbricks: Taking the v out of nfv.
+\newblock In {\em 12th USENIX Symposium on Operating Systems Design and
+  Implementation (OSDI 16)}, pages 203--216, GA, 2016. USENIX Association.
+
+\bibitem{180307}
+S.~Rajagopalan, D.~Williams, H.~Jamjoom, and A.~Warfield.
+\newblock Split/merge: System support for elastic execution in virtual
+  middleboxes.
+\newblock In {\em Presented as part of the 10th USENIX Symposium on Networked
+  Systems Design and Implementation (NSDI 13)}, pages 227--240, Lombard, IL,
+  2013. USENIX.
+
+\bibitem{180672}
+V.~Sekar, N.~Egi, S.~Ratnasamy, M.~K. Reiter, and G.~Shi.
+\newblock Design and implementation of a consolidated middlebox architecture.
+\newblock In {\em Presented as part of the 9th USENIX Symposium on Networked
+  Systems Design and Implementation (NSDI 12)}, pages 323--336, San Jose, CA,
+  2012. USENIX.
+
+\bibitem{sherry_rollback-recovery_2015}
+J.~Sherry, P.~X. Gao, S.~Basu, A.~Panda, A.~Krishnamurthy, C.~Maciocco,
+  M.~Manesh, J.~Martins, S.~Ratnasamy, L.~Rizzo, and S.~Shenker.
+\newblock Rollback-{Recovery} for {Middleboxes}.
+\newblock In {\em Proceedings of the 2015 {ACM} {Conference} on {Special}
+  {Interest} {Group} on {Data} {Communication}}, {SIGCOMM} '15, pages 227--240,
+  New York, NY, USA, 2015. ACM.
+
+\bibitem{sherry_making_2012}
+J.~Sherry, S.~Hasan, C.~Scott, A.~Krishnamurthy, S.~Ratnasamy, and V.~Sekar.
+\newblock Making {Middleboxes} {Someone} else's {Problem}: {Network}
+  {Processing} {As} a {Cloud} {Service}.
+\newblock In {\em Proceedings of the {ACM} {SIGCOMM} 2012 {Conference} on
+  {Applications}, {Technologies}, {Architectures}, and {Protocols} for
+  {Computer} {Communication}}, {SIGCOMM} '12, pages 13--24, New York, NY, USA,
+  2012. ACM.
+
+\end{thebibliography}
