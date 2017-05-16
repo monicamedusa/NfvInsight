@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.20)  11 MAY 2017 14:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.20)  15 MAY 2017 23:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -181,31 +181,39 @@ Using 'Abbrev' bibliography style
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-) (./NfvInsight.aux)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen123
+)
+(./NfvInsight.aux
+
+LaTeX Warning: Label `nfs' multiply defined.
+
+)
 \openout1 = `NfvInsight.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count109
-\scratchdimen=\dimen123
+\scratchdimen=\dimen124
 \scratchbox=\box30
 \nofMPsegments=\count110
 \nofMParguments=\count111
 \everyMPshowfont=\toks35
 \MPscratchCnt=\count112
-\MPscratchDim=\dimen124
+\MPscratchDim=\dimen125
 \MPnumerator=\count113
 \makeMPintoPDFobject=\count114
 \everyMPtoPDFconversion=\toks36
@@ -257,17 +265,17 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 183.
+LaTeX Font Info:    Try loading font information for U+msa on input line 184.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 183.
+LaTeX Font Info:    Try loading font information for U+msb on input line 184.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 183.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 184.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -276,18 +284,12 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 LaTeX Warning: No \author given.
 
 
-Overfull \hbox (1.44765pt too wide) in paragraph at lines 185--207
-\ninept age-ment, net-work con-fig-u-ra-tion, for-ward-ing rule in-stal-la-tion
-,
- []
-
-
-Overfull \hbox (1.75032pt too wide) in paragraph at lines 273--274
+Overfull \hbox (1.75032pt too wide) in paragraph at lines 275--276
 []\OT1/cmr/m/n/10 We also did a sur-vey among top con-fer-ence re-searchers
  []
 
 
-LaTeX Warning: Reference `chain' on page 1 undefined on input line 302.
+LaTeX Warning: Reference `chain' on page 1 undefined on input line 303.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -300,62 +302,77 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (7.69487pt too wide) in paragraph at lines 404--416
+Overfull \hbox (7.69487pt too wide) in paragraph at lines 408--420
 \OT1/cmr/m/n/10 soft-ware stack, which in-cludes vir-tu-al-iza-tion, clus-ter m
 an-
  []
 
 
-Overfull \hbox (9.6115pt too wide) in paragraph at lines 423--424
+Overfull \hbox (9.6115pt too wide) in paragraph at lines 427--428
 []\OT1/cmr/m/n/10 Installing proper rules in OpenFlow-enabled switches
  []
 
 
-Overfull \hbox (2.36041pt too wide) in paragraph at lines 450--454
+Overfull \hbox (2.36041pt too wide) in paragraph at lines 454--458
 \OT1/cmr/m/n/10 bench-mark which pro-vides typ-i-cal NF ser-vices and work-
  []
 
-[2] <design2.pdf, id=15, 600.2425pt x 396.48125pt>
+<design2.pdf, id=11, 600.2425pt x 396.48125pt>
 File: design2.pdf Graphic file (type pdf)
  <use design2.pdf>
-Package pdftex.def Info: design2.pdf used on input line 461.
+Package pdftex.def Info: design2.pdf used on input line 465.
 (pdftex.def)             Requested size: 238.49121pt x 157.53096pt.
 
-Overfull \hbox (1.47273pt too wide) in paragraph at lines 466--480
+Overfull \hbox (1.47273pt too wide) in paragraph at lines 470--484
 \OT1/cmr/m/n/10 fig, for-ward-ing rules in-stal-la-tion, con-nec-tion test-ing,
  and
  []
 
-(./NfvInsight.bbl [3 <./design2.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[2]
 
-) [4]
-(./NfvInsight.aux)
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (15.11154pt too wide) in paragraph at lines 541--542
+[]\OT1/cmr/m/n/10 Haproxy [] is a re-li-able, high per-for-mance TCP/HTTP
+ []
+
+[3 <./design2.pdf>] <cdf.jpg, id=43, 614.295pt x 356.0803pt>
+File: cdf.jpg Graphic file (type jpg)
+ <use cdf.jpg>
+Package pdftex.def Info: cdf.jpg used on input line 615.
+(pdftex.def)             Requested size: 238.49121pt x 138.2405pt.
+
+(./NfvInsight.bbl) [4 <./cdf.jpg>] (./NfvInsight.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 2583 strings out of 493089
- 33814 string characters out of 6134842
- 105185 words of memory out of 5000000
- 6024 multiletter control sequences out of 15000+600000
+ 2596 strings out of 493089
+ 34112 string characters out of 6134842
+ 106421 words of memory out of 5000000
+ 6031 multiletter control sequences out of 15000+600000
  37080 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,28p,713b,258s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,13n,28p,713b,268s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/
-fonts/type1/urw/times/utmr8a.pfb>
-Output written on NfvInsight.pdf (4 pages, 144709 bytes).
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/urw/times/utmr8a.pfb>
+Output written on NfvInsight.pdf (4 pages, 184276 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 79 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

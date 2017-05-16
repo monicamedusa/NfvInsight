@@ -6,45 +6,46 @@ Database file #1: NFV_bib.bib
 Database file #2: NFV.bib
 Warning--to sort, need author or key in noauthor_home_nodate
 Warning--to sort, need author or key in noauthor_project_nodate
-You've used 14 entries,
+Warning--to sort, need author or key in draft-ietf-sfc-dc-use-cases-06
+You've used 8 entries,
             2118 wiz_defined-function locations,
-            580 strings with 7241 characters,
-and the built_in function-call counts, 7378 in all, are:
-= -- 762
-> -- 398
-< -- 12
-+ -- 158
-- -- 144
-* -- 531
-:= -- 1115
-add.period$ -- 52
-call.type$ -- 14
-change.case$ -- 114
+            545 strings with 5450 characters,
+and the built_in function-call counts, 3418 in all, are:
+= -- 351
+> -- 163
+< -- 5
++ -- 66
+- -- 58
+* -- 231
+:= -- 502
+add.period$ -- 26
+call.type$ -- 8
+change.case$ -- 53
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 288
-empty$ -- 512
-format.name$ -- 144
-if$ -- 1636
+cite$ -- 11
+duplicate$ -- 136
+empty$ -- 265
+format.name$ -- 58
+if$ -- 769
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 12
-newline$ -- 71
-num.names$ -- 24
-pop$ -- 138
+int.to.str$ -- 8
+missing$ -- 5
+newline$ -- 40
+num.names$ -- 10
+pop$ -- 72
 preamble$ -- 1
-purify$ -- 100
+purify$ -- 45
 quote$ -- 0
-skip$ -- 233
+skip$ -- 117
 stack$ -- 0
-substring$ -- 446
-swap$ -- 120
-text.length$ -- 12
+substring$ -- 200
+swap$ -- 53
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
-warning$ -- 2
-while$ -- 60
-width$ -- 16
-write$ -- 177
-(There were 2 warnings)
+type$ -- 32
+warning$ -- 3
+while$ -- 25
+width$ -- 9
+write$ -- 91
+(There were 3 warnings)

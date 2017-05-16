@@ -48,6 +48,7 @@
 \documentclass{sig-alternate-10pt}
 %\documentclass{sig-alternate-05-2015}
 \usepackage{url}
+\usepackage{multirow}
 
 \begin{document}
 
@@ -185,7 +186,7 @@
 NFV is attracting more and more interest in both industry and academia. 
 It is promising to reduce cost for network operators and accelerate innovation 
 by replacing traditional hardware-base appliance with virtualized functions 
-deploying in cloud computing environment.
+deployed in cloud computing environment.
 NFV testing environment deploying 
 involves multiple layers in the software stack including 
 VNF image packaging, virtualization management, 
@@ -194,15 +195,16 @@ and performance metric measurement.
 According to our survey, 
 it takes averagely 1-2 human-month to set up a testing environment.
 Motivated by the time taking process of deployment, 
-we decided to develop a easy-to-use NFV benchmark named NfvInsight.
+we decided to develop an easy-to-use NFV benchmark named NI.
 The benchmark has three key features: 
 1) Representative NFs 
 2) One-click running 
 3) Plenty metrics for measurement. 
-NI include 5 VNF covering half of the NFV use cases, 
-and provide typical NF chaining policies. 
+NI includes 5 VNF %covering half of the NFV use cases, 
+and provides typical NF chaining policies. 
 NI leverages Kubernetes and Docker to do infrastructure management, 
-and OVS to control data flow.
+and OVS to control data flow. 
+Our evaluation shows measurement results NI can provide.
 \end{abstract}
 
 
@@ -268,12 +270,11 @@ Network function virtualization (NFV) has become a hot topic, both in industry a
 %FTMB\cite{sherry_rollback-recovery_2015}
 %DFC\cite{194970}
 
-However, a suite of easy-to-use NFV benchmark is not yet existed. It is unavoidable to experience a time consuming process finding both open source software and proper chaining policies. According to our observation, most NFs used in papers are different open source implementations linked in different kinds of NF chain policies. So that, there is not yet a general baseline for measurement and comparison. Furthermore, the workload generator and network traffic trace used are also different, and real-world traces need to be provided to test different NF chains.
+However, a suite of easy-to-use NFV benchmark is not yet existed. It is unavoidable to experience a time consuming process finding both open source software and proper chaining policies. According to our observation, most NFs used in papers are different open source implementations linked in different kinds of NF chain policies. So that, there is not yet a general baseline for measurement and comparison. Furthermore, the workload generator and network traffic trace used are also different, traces need to be provided to test different NF chains.
 
-We also did a survey among top conference researchers who have experiences setting up NFV environment. In our survey, we found that the deploying time varies much due to the scale. In average, it takes around 1 month to build up a NF cluster having less than 10 VM instances. But when the scale of instances increase to over 50, the build up process can take 3-4 months or more. One of our respondent said that they were still keeping on iterating and improving their testbed constantly.
+We also did a survey among top conference researchers who have experiences setting up NFV environment. In our survey, we found that the deploying time varies much due to the scale. In average, it takes 1-2 months to build up a NF cluster having less than 10 VM instances. But when the scale of instances increase to over 50, the build up process can take 3-4 months or more. One of our respondent said that they were still keeping on iterating and improving their testbed constantly.
 
-There are more complains pointing out their pain points: 1) Automate the setting up and testing process. 2) Configure and stabilize NFs (?). 3) Write rules to set up topology and enforce flow control.
-%our design to solve the pain points????
+
 
 In this paper, we develop a suite of NF benchmarks, which is supposed to have the following characteristics: 1) Representing typical NFs 2) Easy to use 3) Plenty metrics for measurement.
 
@@ -322,6 +323,9 @@ manage the images, and do allocation automatically.
 We use OVS to do switching and packet force forwarding.
 Pre-written scripts and Openflow rules are written 
 to implement chaining and flow control. 
+%There are more complains pointing out their pain points: 1) Automate the setting up and testing process. 2) Configure and stabilize NFs (?). 3) Write rules to set up topology and enforce flow control.
+%%our design to solve the pain points????
+%`easy to use' design should solve pain points
 
 In our benchmark, we provide the most concerned metrics for measurement, 
 that is latency and throughput. 
@@ -475,43 +479,101 @@ Second, a well-designed benchmark with a bunch of pre-written scripts to automat
 Since NFV involves multi-layers in the whole software stack, 
 the automation process includes VNF image packaging, 
 NF allocation, networking config, forwarding rules installation, 
-connection testing, and metrics measurement.
+connection testing, and metrics measurement. 
 %The goal and challenges of the work
 
 The goal of our work is to provide a benchmark suite 
 with the following three characteristics: 
 1) Representing typical NFs 2) Easy to use 3) Plenty metrics for measurement.
 
-Representative NF
+%Challenges:
+%
+%Representative NF
+%
+%K8s+ovs
+%
+%measurement
 
-K8s+ovs
 
-measurement
+\subsection{VNF}
+The first challenge of our work is to select VNF 
+and representative NF chaining policies. 
+%Since VNFaaS (VNF as a Service) and IMS are 
+%the most prevalent NFV use cases, 
+%we choose to .
+We reviewed papers on NFV and find out 
+all the open source VNF has been used. 
+We categorized them into several kinds according to their function, 
+and selected the VNF which needs no modification of the kernel. 
+NI provides DOCKERFILE to packet VNF into docker image, 
+and provides pre-wirtten config files to 
+config each VNF working in the way as demanded. 
+Table \ref{nfs} lists information of the VNF 
+and the workload generator used.
 
-
-\subsection{NF}
-Most prevalent NFV use cases.
-
-We select NFs which needs no modification of the kernel.
-
-config NF to work in the way as demanded 
-
-Clearwater\cite{noauthor_project_nodate}
-
-\begin{table}[!t]
+\begin{table}[h]
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
 \centering
-\begin{tabular}{|c|c|}\hline
-\textbf{Category} & \textbf{NF} \\\hline
-IMS & Clearwater \\\hline
-IDS & Snort \\\hline
-NAT & iptables \\\hline
-L4 Load Balancer & Haproxy \\\hline
-L7 Cache & Squid \\\hline
+\begin{tabular}{|c|c|c|}\hline
+\textbf{Category} & \textbf{NF} & \tabincell{c}{\textbf{Workload}\\\textbf{Generator}}\\\hline
+IMS & Clearwater & SipP \\\hline
+IDS & Snort & \multirow{4}{*}{Httperf} \\\cline{1-2}
+NAT & iptables & \\\cline{1-2}
+L4 Load Balancer & Haproxy & \\\cline{1-2}
+L7 Cache & Squid & \\\hline
 \end{tabular}
 \caption{NFs included in our benchmark.}
 \label{nfs}
 \end{table}
+
+The following are the brief introduction of the VNF.
+\begin{itemize}
+\item{}
+Clearwater \cite{noauthor_project_nodate} is an open source implementation of IMS (the IP Multimedia Subsystem) designed from the ground up for massively scalable deployment in the Cloud to provide voice, video and messaging services to millions of users. 
+
+\item{}
+Snort \cite{} is an open source intrusion prevention system capable of real-time traffic analysis and packet logging.
+
+\item{}
+iptables \cite{}
+
+\item{}
+Haproxy \cite{} is a reliable, high performance TCP/HTTP load balancer.
+
+\item{}
+Squid \cite{} is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages.
+\end{itemize}
+
+We referred to \cite{draft-ietf-sfc-dc-use-cases-06}
+
+%\begin{itemize}
+%\item[]
+Edge Firewall (EdgeFW):  SN hosting service functions such as VPN, DHCP, NAT, IP-Audit, Protocol Inspection, DPI etc., with policies primarily focusing on threats external to the data center.
+
+%\item[]
+Application Delivery Controller (ADC): Service Function that distributes traffic across a pool of servers (applications) for efficient resource utilization, application scaling as well as to provide high availability among others.
+       
+%\item[]
+Application Firewall (AppFW):  Service Function that isolates traffic within a segment or protects from application specific threats. This falls into the same class as DPI but deployed much closer to the applications. It is an intra-segment firewall.
+
+%\item[]
+Web Optimization Control (WOC): Service functions to optimize the use of WAN link bandwidth, improve effective user throughput and latencies leading to overall improved user experience. WOC includes various optimizers such as compression, de-duplication, congestion control, application specific optimizers, etc. %WOC requires peers at either end of the WAN link to perform optimizations. The scope of this document is limited to the DC side of the WAN link.
+%\end{itemize}
+
+\begin{table*}[!t]
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\centering
+\begin{tabular}{|l|l|l|}\hline
+\textbf{} & \multicolumn{1}{c|}{\textbf{NF}} & \multicolumn{1}{c|}{\textbf{chain}} \\\hline
+SFC1 & EdgeFW & Httperf $\to$ iptables $\to$ Apache \\\hline
+SFC2 & EdgeFW $\to$ ADC & Httperf $\to$ iptables $\to$ Haproxy $\to$ Apache \\\hline
+SFC3 & EdgeFW $\to$ ADC $\to$ AppFW & Httperf $\to$ iptables $\to$ Haproxy $\to$ Snort $\to$ Apache \\\hline
+SFC4 & WOC $\to$ EdgeFW $\to$ ADC $\to$ AppFW & Httperf $\to$  Squid $\to$ iptables $\to$ Haproxy $\to$ Snort $\to$ Apache \\\hline
+\end{tabular}
+\caption{VNF chaining policies.}
+\label{nfs}
+\end{table*}
+
 
 
 
@@ -546,6 +608,13 @@ Connection test
 
 
 \section{Evaluation}
+
+\begin{figure}[t]
+\label{cdf}
+\centering
+\includegraphics[width=3.3in]{cdf.jpg}
+\caption{Per-packet latency}
+\end{figure}
 
 
 \section{Related Works}
