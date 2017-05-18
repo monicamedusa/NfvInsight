@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.20)  18 MAY 2017 14:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.20)  18 MAY 2017 21:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -185,7 +185,14 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen123
 )
-(./NfvInsight.aux)
+(./NfvInsight.aux
+
+LaTeX Warning: Label `cdf' multiply defined.
+
+
+LaTeX Warning: Label `cdf' multiply defined.
+
+)
 \openout1 = `NfvInsight.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -200,8 +207,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
-
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count109
 \scratchdimen=\dimen124
@@ -281,41 +287,9 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 LaTeX Warning: No \author given.
 
 
-LaTeX Warning: Citation `noauthor_home_nodate' on page 1 undefined on input lin
-e 263.
-
-
-LaTeX Warning: Citation `gember-jacobson_opennf:_2014' on page 1 undefined on i
-nput line 263.
-
-
-LaTeX Warning: Citation `180672' on page 1 undefined on input line 263.
-
-
-LaTeX Warning: Citation `palkar_e2:_2015' on page 1 undefined on input line 263
-.
-
-
-LaTeX Warning: Citation `bremler-barr_openbox:_2016' on page 1 undefined on inp
-ut line 263.
-
-
-LaTeX Warning: Citation `199352' on page 1 undefined on input line 263.
-
-
 Overfull \hbox (1.75032pt too wide) in paragraph at lines 275--276
 []\OT1/cmr/m/n/10 We also did a sur-vey among top con-fer-ence re-searchers
  []
-
-
-LaTeX Warning: Reference `nfs' on page 1 undefined on input line 294.
-
-
-LaTeX Warning: Citation `draft-ietf-sfc-dc-use-cases-06' on page 1 undefined on
- input line 299.
-
-
-LaTeX Warning: Reference `chain' on page 1 undefined on input line 303.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -327,9 +301,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Overfull \hbox (4.71088pt too wide) in paragraph at lines 344--344
 []\secfnt A SUR-VEY OF NFV TEST-ING EN-VI-RON-
  []
-
-
-LaTeX Warning: Reference `survey' on page 2 undefined on input line 374.
 
 
 Overfull \hbox (7.69487pt too wide) in paragraph at lines 407--419
@@ -354,27 +325,6 @@ Overfull \hbox (1.47273pt too wide) in paragraph at lines 462--477
  []
 
 [2]
-
-LaTeX Warning: Reference `nfs' on page 3 undefined on input line 519.
-
-
-LaTeX Warning: Citation `noauthor_project_nodate' on page 3 undefined on input 
-line 529.
-
-
-LaTeX Warning: Citation `draft-ietf-sfc-dc-use-cases-06' on page 3 undefined on
- input line 566.
-
-
-LaTeX Warning: Reference `chains' on page 3 undefined on input line 568.
-
-
-LaTeX Warning: Reference `nfs' on page 3 undefined on input line 575.
-
-
-LaTeX Warning: Reference `chains' on page 3 undefined on input line 576.
-
-
 Overfull \hbox (13.30595pt too wide) in paragraph at lines 583--584
 []\OT1/cmr/m/n/10 Application De-liv-ery Con-troller (ADC): Ser-vice Func-
  []
@@ -389,33 +339,66 @@ File: design2.pdf Graphic file (type pdf)
  <use design2.pdf>
 Package pdftex.def Info: design2.pdf used on input line 597.
 (pdftex.def)             Requested size: 238.49121pt x 157.53096pt.
+ [3]
+Overfull \hbox (2.46548pt too wide) in paragraph at lines 628--630
+[]\OT1/cmr/bx/n/10 Build im-ages \OT1/cmr/m/n/10 We pro-vide DOCK-ER-FILE to bu
+ild
+ []
 
-
-LaTeX Warning: Reference `design' on page 3 undefined on input line 617.
-
-[3] <cdf.pdf, id=20, 289.08pt x 180.675pt>
-File: cdf.pdf Graphic file (type pdf)
- <use cdf.pdf>
-Package pdftex.def Info: cdf.pdf used on input line 640.
+<cdf_chain1.pdf, id=20, 289.08pt x 180.675pt>
+File: cdf_chain1.pdf Graphic file (type pdf)
+ <use cdf_chain1.pdf>
+Package pdftex.def Info: cdf_chain1.pdf used on input line 660.
 (pdftex.def)             Requested size: 238.49121pt x 149.05594pt.
- (./NfvInsight.bbl
-Underfull \vbox (badness 1303) has occurred while \output is active []
+Package epstopdf Info: Source file: <throughput_chain1.eps>
+(epstopdf)                    date: 2017-05-18 17:22:02
+(epstopdf)                    size: 51118 bytes
+(epstopdf)             Output file: <throughput_chain1-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-18 17:23:33
+(epstopdf)                    size: 12180 bytes
+(epstopdf)             Command: <repstopdf --outfile=throughput_chain1-eps-conv
+erted-to.pdf throughput_chain1.eps>
+(epstopdf)             \includegraphics on input line 667.
+Package epstopdf Info: Output file is already uptodate.
 
- [4 <./design2.pdf> <./cdf.pdf>]) [5
+<throughput_chain1-eps-converted-to.pdf, id=21, 414.54875pt x 121.45375pt>
+File: throughput_chain1-eps-converted-to.pdf Graphic file (type pdf)
 
-] (./NfvInsight.aux)
+<use throughput_chain1-eps-converted-to.pdf>
+Package pdftex.def Info: throughput_chain1-eps-converted-to.pdf used on input l
+ine 667.
+(pdftex.def)             Requested size: 238.49121pt x 69.8724pt.
+Package epstopdf Info: Source file: <throughput_chain2.eps>
+(epstopdf)                    date: 2017-05-18 18:12:00
+(epstopdf)                    size: 61476 bytes
+(epstopdf)             Output file: <throughput_chain2-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-18 18:12:52
+(epstopdf)                    size: 14029 bytes
+(epstopdf)             Command: <repstopdf --outfile=throughput_chain2-eps-conv
+erted-to.pdf throughput_chain2.eps>
+(epstopdf)             \includegraphics on input line 674.
+Package epstopdf Info: Output file is already uptodate.
 
-LaTeX Warning: There were undefined references.
+<throughput_chain2-eps-converted-to.pdf, id=22, 596.2275pt x 245.91875pt>
+File: throughput_chain2-eps-converted-to.pdf Graphic file (type pdf)
 
+<use throughput_chain2-eps-converted-to.pdf>
+Package pdftex.def Info: throughput_chain2-eps-converted-to.pdf used on input l
+ine 674.
+(pdftex.def)             Requested size: 238.49121pt x 98.36575pt.
+ (./NfvInsight.bbl [4 <./design2.pdf> <./cdf_chain1.pdf> <./throughput_chain1-e
+ps-converted-to.pdf>]) [5
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+ <./throughput_chain2-eps-converted-to.pdf>] (./NfvInsight.aux)
+
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2596 strings out of 493089
- 34116 string characters out of 6134842
- 106326 words of memory out of 5000000
- 6032 multiletter control sequences out of 15000+600000
+ 2606 strings out of 493089
+ 34532 string characters out of 6134842
+ 105429 words of memory out of 5000000
+ 6039 multiletter control sequences out of 15000+600000
  37080 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,13n,28p,713b,268s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -429,10 +412,10 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
 2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb>
-Output written on NfvInsight.pdf (5 pages, 167813 bytes).
+Output written on NfvInsight.pdf (5 pages, 189374 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 144 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

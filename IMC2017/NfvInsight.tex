@@ -300,7 +300,7 @@ We referred to ETSI standard documents of SFC
 for the typical use case of service chains 
 in the scenarios of both enterprise user and datacenter.
 We also consulted our industrial partners for real world chaining policies. 
-The typical NF chains our benchmark provides are listed in Table \ref{chain}. 
+The typical NF chains our benchmark provides are listed in Table \ref{chains}. 
 %\item{\textbf{Proper workload generator.}} 
 \textbf{3) Proper workload generator.}
 Since each NF chain serves at different network level, 
@@ -590,7 +590,7 @@ Web Optimization Control (WOC): Service functions to optimize the use of WAN lin
 \end{itemize}
 
 
-\subsection{Benchmark Usage}
+\subsection{Benchmark}
 
 \begin{figure}[!t]
 \centering
@@ -602,30 +602,50 @@ Web Optimization Control (WOC): Service functions to optimize the use of WAN lin
 %Framework
 %for ppl from network field
 To achieve the demand of easy to use, 
-users are supposed to run only one command to run the test, 
+users are supposed to run only one command to start the test, 
 and touch only two files, 
-which are the configuration file and the measurement report. 
-The process to use the benchmark includes five steps: 
-\begin{itemize}
-\item[]{}Step1 Pre-install 
-\item[]{}Step2 Build images 
-\item[]{}Step3 Write config file 
-\item[]{}Step4 One click running 
-\item[]{}Step5 Get the report 
-\end{itemize}
+one configuration file and one measurement report. 
 
-Figure \ref{design} shows the architecture of our benchmark. 
+The architecture of our benchmark is shown in Figure \ref{design}. 
 It has three main parts, NFVI, NF service and NI.
 NFVI (NFV Infrastructure) is consisted of hardware resources 
 including compute, storage and network. 
 NF services are deployed upon NFVI, forming a service chain. 
 NI is the key component of our benchmark. 
-It does NF allocation, chaining automatically leveraging NFVI management framework.
-Furthermore 
+It does NF allocation and chaining automatically leveraging NFVI management framework.
+Furthermore, it does connection test and performance monitoring during test running.
+The process to use the benchmark includes five steps: 
 
-Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
+\begin{itemize}
+\item[\textbf{1.}]{}\textbf{Pre-install} 
+In the first step, users need to install Kubernetes, OVS 
+and Openflow controller for their physical server cluster. 
+Kubernetes is an open-source system for automating deployment, scaling, 
+and management of containerized applications. 
+To force forwarding packets cross nodes, 
+OVS bridge and Openflow global control is needed. 
 
-Connection test
+\item[\textbf{2.}]{}\textbf{Build images} 
+We provide DOCKERFILE to build images for each VNF listed in Table \ref{nfs}, 
+
+
+
+\item[\textbf{3.}]{}\textbf{Write config file} 
+
+To config each NF working in the demanded mode, 
+we provide pre-written config file to set up 
+
+\item[\textbf{4.}]{}\textbf{One click running} 
+
+connect docker to OVS bridge
+
+\item[\textbf{5.}]{}\textbf{Get the report} 
+\end{itemize}
+
+
+
+
+Connection test 
 
 
 
@@ -637,10 +657,23 @@ Connection test
 \begin{figure}[t]
 \label{cdf}
 \centering
-\includegraphics[width=3.3in]{cdf.pdf}
+\includegraphics[width=3.3in]{cdf_chain1.pdf}
 \caption{Per-packet latency}
 \end{figure}
 
+\begin{figure}[t]
+\label{cdf}
+\centering
+\includegraphics[width=3.3in]{throughput_chain1.eps}
+\caption{Throughput}
+\end{figure}
+
+\begin{figure}[t]
+\label{cdf}
+\centering
+\includegraphics[width=3.3in]{throughput_chain2.eps}
+\caption{Throughput}
+\end{figure}
 
 \section{Related Works}
 \section{Conclusions}
