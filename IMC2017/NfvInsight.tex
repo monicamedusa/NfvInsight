@@ -49,6 +49,12 @@
 %\documentclass{sig-alternate-05-2015}
 \usepackage{url}
 \usepackage{multirow}
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
 
 \begin{document}
 
@@ -636,45 +642,98 @@ It includes choice of testing chain,
 mapping between physical server and docker,
 resource configuration of each docker, 
 host network and other NF specific configurations. 
+To config each NF working in the demanded mode, 
+we provide pre-written config files for each NF. 
 
 \item[\textbf{4.}]{}\textbf{One click running} 
 Users can run the test by executing only one command. 
 NI does a series automate processes. 
-First it reads the configuration file edited by users and rewrite the related scripts. 
-
-To config each NF working in the demanded mode, 
-we provide pre-written config file. 
-
-connect docker to OVS bridge
+First it reads the configuration file edited by users and rewrites the related scripts, 
+which including container deployment scripts and NF config files. 
+Then the NF Allocation module deploys containers according to user configuration. 
+When containers are started and their status turn to `ready', 
+NF Chaining module adds virtual NIC for each container, 
+connects them to OVS bridge, 
+and installs Openflow forwarding rules according to the chaining policy. 
+To check whether the chain works, 
+the Connection Test module send a TCP request 
+from the packet generator and check if it gets response from Apache server. 
+If the connection test is passed, 
+the test is run and metric measurement begins.
 
 \item[\textbf{5.}]{}\textbf{Get the report} 
+The Performance Monitor module does metric measurement 
+and output a report.
+
 \end{itemize}
-
-
-
-
-Connection test 
-
-
 
 %\section{Implementation}
 
-
 \section{Evaluation}
+We have implemented a demo version of our benchmark. 
+It now can work on a single node, 
+and measure classic network metrics such as throughput and latency.
+In this section, we evaluate two chains in NFVInsight. 
+The testbed we used for our evaluation builds on an edge server (Intel Xeon E5V3-2658 2.2GHz, 12 cores, 32GB, 2$\times$1Gbps NICs) that runs CentOS 7 system, with Kubernetes 1.4 and Open vSwitch 2.5.1. We encapsulates NFs with Docker 1.12.5 running Ubuntu 14.14. 
+
+\subsection{Throughput}
+
+%\begin{figure}[t]
+%\label{cdf}
+%\centering
+%\includegraphics[width=3.3in]{throughput_chain1.eps}
+%\caption{Throughput of each NF of SFC1.}
+%\end{figure}
+%
+%\begin{figure}[t]
+%\label{cdf}
+%\centering
+%\includegraphics[width=3.3in]{throughput_chain2.eps}
+%\caption{Throughput of each NF of SFC2.}
+%\end{figure}
+
+\begin{figure}[!t]
+\centering
+\subfloat[SFC1]{\includegraphics[width=3.3in]{throughput_chain1.eps}
+\label{throughput_SFC1}}
+\hfil
+\subfloat[SFC2]{\includegraphics[width=3.3in]{throughput_chain2.eps}
+\label{throughput_SFC2}}
+\hfil
+\caption{Throughput of each NF}
+\label{throughput}
+\end{figure}
+
+We measure throughput of each container using Docker API. 
+The transmit bytes and receive bytes are recorded two times 
+at the begin and end of test running respectively. 
+Throughput of each NF is calculated 
+by doing subtraction of transmit bytes and divid it by the testing time.
+
+Figure \ref{throughput} shows the topology of two chains 
+and the throughput labeled on the arrows. 
+The throughput is divided by request throughput and respond throughput.
+
+\subsection{Latency}
 
 \begin{figure}[t]
-\label{cdf}
+\centering
+\includegraphics[width=3.3in]{e2e_latency_chain12.pdf}
+\caption{End-to-end request latency of SFC1 and SFC2.}
+\label{e2e_latency}
+\end{figure}
+
+\begin{figure}[t]
 \centering
 \includegraphics[width=3.3in]{cdf_chain1.pdf}
-\caption{Per-packet latency}
+\caption{Per-packet latency of NAT in SFC1}
+\label{nat_latency}
 \end{figure}
 
-\begin{figure}[t]
-\label{cdf}
-\centering
-\includegraphics[width=3.3in]{throughput_chain1.eps}
-\caption{Throughput}
-\end{figure}
+We modified the workload generator Httperf to output the latency of each request. 
+Figure \ref{e2e_latency} shows the end to end latency of SFC1 and SFC2. 
+Figure \ref{nat_latency} shows the per-packet latency of NAT in SFC1. 
+
 
 %\begin{figure}[t]
 %\label{cdf}
@@ -683,13 +742,6 @@ Connection test
 %\caption{Throughput}
 %\end{figure}
 
-\begin{figure}[t]
-\label{cdf}
-\centering
-\includegraphics[width=3.3in]{throughput_chain2.eps}
-\caption{Throughput}
-\end{figure}
-
 %\begin{figure}[t]
 %\label{cdf}
 %\centering
@@ -697,27 +749,23 @@ Connection test
 %\caption{Throughput}
 %\end{figure}
 
-\begin{figure}[t]
-\label{cdf}
-\centering
-\includegraphics[width=3.3in]{e2e_latency_chain12.pdf}
-\caption{End-to-end request latency of chain 1 and chain 2.}
-\end{figure}
 
-\section{Related Works}
+
+%\section{Related Works}
 \section{Conclusions}
 
 %\end{document}  % This is where a 'short' article might terminate
 
 %ACKNOWLEDGMENTS are optional
-\section{Acknowledgments}
+%\section{Acknowledgments}
 
 %
 % The following two commands are all you need in the
 % initial runs of your .tex file to
 % produce the bibliography for the citations in your paper.
 \bibliographystyle{abbrv}
-\bibliography{NFV_bib,NFV}  % sigproc.bib is the name of the Bibliography in this case
+\bibliography{NFV_bib,NFV}  
+% sigproc.bib is the name of the Bibliography in this case
 % You must have a proper ".bib" file
 %  and remember to run:
 % latex bibtex latex latex

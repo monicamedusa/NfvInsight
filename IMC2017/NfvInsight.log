@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.20)  18 MAY 2017 23:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.20)  19 MAY 2017 05:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -185,43 +185,88 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen123
 )
-(./NfvInsight.aux
-
-LaTeX Warning: Label `cdf' multiply defined.
-
-
-LaTeX Warning: Label `cdf' multiply defined.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
 
 
-LaTeX Warning: Label `cdf' multiply defined.
+Package subfig Warning: Your document class has a bad definition
+ of \endfigure, most likely
+ \let\endfigure=\end@float
+ which has now been changed to
+ \def\endfigure{\end@float}
+ because otherwise subsequent changes to \end@float
+ (like done by several packages changing float behaviour)
+ can't take effect on \endfigure.
+ Please complain to your document class author.
 
+
+Package subfig Warning: Your document class has a bad definition
+ of \endtable, most likely
+ \let\endtable=\end@float
+ which has now been changed to
+ \def\endtable{\end@float}
+ because otherwise subsequent changes to \end@float
+ (like done by several packages changing float behaviour)
+ can't take effect on \endtable.
+ Please complain to your document class author.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen124
+\captionmargin@=\dimen125
+\captionwidth=\dimen126
+\caption@tempdima=\dimen127
+\caption@indent=\dimen128
+\caption@parindent=\dimen129
+\caption@hangindent=\dimen130
+\abovecaptionskip=\skip44
+\belowcaptionskip=\skip45
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
 )
+\c@KVtest=\count109
+\sf@farskip=\skip46
+\sf@captopadj=\dimen131
+\sf@capskip=\skip47
+\sf@nearskip=\skip48
+\c@subfigure=\count110
+\c@subfigure@save=\count111
+\c@lofdepth=\count112
+\c@subtable=\count113
+\c@subtable@save=\count114
+\c@lotdepth=\count115
+\sf@top=\skip49
+\sf@bottom=\skip50
+)
+(./NfvInsight.aux)
 \openout1 = `NfvInsight.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
- (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count109
-\scratchdimen=\dimen124
+\scratchcounter=\count116
+\scratchdimen=\dimen132
 \scratchbox=\box30
-\nofMPsegments=\count110
-\nofMParguments=\count111
+\nofMPsegments=\count117
+\nofMParguments=\count118
 \everyMPshowfont=\toks35
-\MPscratchCnt=\count112
-\MPscratchDim=\dimen125
-\MPnumerator=\count113
-\makeMPintoPDFobject=\count114
+\MPscratchCnt=\count119
+\MPscratchDim=\dimen133
+\MPnumerator=\count120
+\makeMPintoPDFobject=\count121
 \everyMPtoPDFconversion=\toks36
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -271,17 +316,20 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 184.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 190.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 184.
+LaTeX Font Info:    Try loading font information for U+msb on input line 190.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 184.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 190.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -290,7 +338,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 LaTeX Warning: No \author given.
 
 
-Overfull \hbox (1.75032pt too wide) in paragraph at lines 275--276
+Overfull \hbox (1.75032pt too wide) in paragraph at lines 281--282
 []\OT1/cmr/m/n/10 We also did a sur-vey among top con-fer-ence re-searchers
  []
 
@@ -301,58 +349,53 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-Overfull \hbox (4.71088pt too wide) in paragraph at lines 344--344
+Overfull \hbox (4.71088pt too wide) in paragraph at lines 350--350
 []\secfnt A SUR-VEY OF NFV TEST-ING EN-VI-RON-
  []
 
 
-Overfull \hbox (7.69487pt too wide) in paragraph at lines 407--419
+Overfull \hbox (7.69487pt too wide) in paragraph at lines 413--425
 \OT1/cmr/m/n/10 soft-ware stack, which in-cludes vir-tu-al-iza-tion, clus-ter m
 an-
  []
 
 
-Overfull \hbox (9.6115pt too wide) in paragraph at lines 426--427
+Overfull \hbox (9.6115pt too wide) in paragraph at lines 432--433
 []\OT1/cmr/m/n/10 Installing proper rules in OpenFlow-enabled switches
  []
 
 
-Overfull \hbox (2.36041pt too wide) in paragraph at lines 453--457
+Overfull \hbox (2.36041pt too wide) in paragraph at lines 459--463
 \OT1/cmr/m/n/10 bench-mark which pro-vides typ-i-cal NF ser-vices and work-
  []
 
 
-Overfull \hbox (1.47273pt too wide) in paragraph at lines 462--477
+Overfull \hbox (1.47273pt too wide) in paragraph at lines 468--483
 \OT1/cmr/m/n/10 fig, for-ward-ing rules in-stal-la-tion, con-nec-tion test-ing,
  and
  []
 
 [2]
-Overfull \hbox (13.30595pt too wide) in paragraph at lines 583--584
+Overfull \hbox (13.30595pt too wide) in paragraph at lines 589--590
 []\OT1/cmr/m/n/10 Application De-liv-ery Con-troller (ADC): Ser-vice Func-
  []
 
 
-Overfull \hbox (1.41711pt too wide) in paragraph at lines 589--590
+Overfull \hbox (1.41711pt too wide) in paragraph at lines 595--596
 \OT1/cmr/m/n/10 de-duplication, con-ges-tion con-trol, ap-pli-ca-tion spe-
  []
 
 <design2.pdf, id=15, 600.2425pt x 396.48125pt>
 File: design2.pdf Graphic file (type pdf)
  <use design2.pdf>
-Package pdftex.def Info: design2.pdf used on input line 597.
+Package pdftex.def Info: design2.pdf used on input line 603.
 (pdftex.def)             Requested size: 238.49121pt x 157.53096pt.
  [3]
-Overfull \hbox (2.46548pt too wide) in paragraph at lines 628--632
+Overfull \hbox (2.46548pt too wide) in paragraph at lines 634--638
 []\OT1/cmr/bx/n/10 Build im-ages \OT1/cmr/m/n/10 We pro-vide DOCK-ER-FILE to bu
 ild
  []
 
-<cdf_chain1.pdf, id=20, 289.08pt x 180.675pt>
-File: cdf_chain1.pdf Graphic file (type pdf)
- <use cdf_chain1.pdf>
-Package pdftex.def Info: cdf_chain1.pdf used on input line 668.
-(pdftex.def)             Requested size: 238.49121pt x 149.05594pt.
 Package epstopdf Info: Source file: <throughput_chain1.eps>
 (epstopdf)                    date: 2017-05-18 17:22:02
 (epstopdf)                    size: 51118 bytes
@@ -361,15 +404,14 @@ Package epstopdf Info: Source file: <throughput_chain1.eps>
 (epstopdf)                    size: 12180 bytes
 (epstopdf)             Command: <repstopdf --outfile=throughput_chain1-eps-conv
 erted-to.pdf throughput_chain1.eps>
-(epstopdf)             \includegraphics on input line 675.
+(epstopdf)             \includegraphics on input line 698.
 Package epstopdf Info: Output file is already uptodate.
-
-<throughput_chain1-eps-converted-to.pdf, id=21, 414.54875pt x 121.45375pt>
+<throughput_chain1-eps-converted-to.pdf, id=20, 414.54875pt x 121.45375pt>
 File: throughput_chain1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use throughput_chain1-eps-converted-to.pdf>
 Package pdftex.def Info: throughput_chain1-eps-converted-to.pdf used on input l
-ine 675.
+ine 698.
 (pdftex.def)             Requested size: 238.49121pt x 69.8724pt.
 Package epstopdf Info: Source file: <throughput_chain2.eps>
 (epstopdf)                    date: 2017-05-18 18:12:00
@@ -379,55 +421,73 @@ Package epstopdf Info: Source file: <throughput_chain2.eps>
 (epstopdf)                    size: 14029 bytes
 (epstopdf)             Command: <repstopdf --outfile=throughput_chain2-eps-conv
 erted-to.pdf throughput_chain2.eps>
-(epstopdf)             \includegraphics on input line 689.
+(epstopdf)             \includegraphics on input line 701.
 Package epstopdf Info: Output file is already uptodate.
 
-<throughput_chain2-eps-converted-to.pdf, id=22, 596.2275pt x 245.91875pt>
+<throughput_chain2-eps-converted-to.pdf, id=21, 596.2275pt x 245.91875pt>
 File: throughput_chain2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use throughput_chain2-eps-converted-to.pdf>
 Package pdftex.def Info: throughput_chain2-eps-converted-to.pdf used on input l
-ine 689.
+ine 701.
 (pdftex.def)             Requested size: 238.49121pt x 98.36575pt.
 
-<e2e_latency_chain12.pdf, id=23, 289.08pt x 180.675pt>
+Overfull \hbox (1.82454pt too wide) in paragraph at lines 698--703
+ [][] 
+ []
+
+
+Overfull \hbox (1.82454pt too wide) in paragraph at lines 698--703
+ [] 
+ []
+
+
+Overfull \hbox (5.3615pt too wide) in paragraph at lines 707--712
+[]\OT1/cmr/m/n/10 We mea-sure through-put of each con-tainer us-ing Docker
+ []
+
+<e2e_latency_chain12.pdf, id=22, 289.08pt x 180.675pt>
 File: e2e_latency_chain12.pdf Graphic file (type pdf)
 
 <use e2e_latency_chain12.pdf>
-Package pdftex.def Info: e2e_latency_chain12.pdf used on input line 703.
+Package pdftex.def Info: e2e_latency_chain12.pdf used on input line 721.
 (pdftex.def)             Requested size: 238.49121pt x 149.05594pt.
- (./NfvInsight.bbl [4 <./design2.pdf> <./cdf_chain1.pdf> <./throughput_chain1-e
-ps-converted-to.pdf>]
-Underfull \vbox (badness 1394) has occurred while \output is active []
+ <cdf_chain1.pdf, id=23, 289.08pt x 180.675pt>
+File: cdf_chain1.pdf Graphic file (type pdf)
 
-) [5 <./throughput_chain2-eps-converted-to.pdf> <./e2e_latency_chain12.pdf>]
-(./NfvInsight.aux)
+<use cdf_chain1.pdf>
+Package pdftex.def Info: cdf_chain1.pdf used on input line 728.
+(pdftex.def)             Requested size: 238.49121pt x 149.05594pt.
+ (./NfvInsight.bbl [4 <./design2.pdf>]) [5 <./throughput_chain1-eps-converted-t
+o.pdf> <./throughput_chain2-eps-converted-to.pdf> <./e2e_latency_chain12.pdf> <
+./cdf_chain1.pdf
 
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./cdf_chain1.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+>] (./NfvInsight.aux) ) 
 Here is how much of TeX's memory you used:
- 2611 strings out of 493089
- 34666 string characters out of 6134842
- 105429 words of memory out of 5000000
- 6043 multiletter control sequences out of 15000+600000
- 37080 words of font info for 47 fonts, out of 8000000 for 9000
+ 3344 strings out of 493089
+ 48035 string characters out of 6134842
+ 118855 words of memory out of 5000000
+ 6767 multiletter control sequences out of 15000+600000
+ 37385 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,28p,713b,268s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb>
-Output written on NfvInsight.pdf (5 pages, 203184 bytes).
+ 41i,13n,47p,713b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base
+/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
+0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on NfvInsight.pdf (5 pages, 213562 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 188 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
