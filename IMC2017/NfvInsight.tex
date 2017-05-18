@@ -627,15 +627,23 @@ OVS bridge and Openflow global control is needed.
 
 \item[\textbf{2.}]{}\textbf{Build images} 
 We provide DOCKERFILE to build images for each VNF listed in Table \ref{nfs}, 
-
-
+A private registry is needed to manage the images, 
+so that Kubernetes can create containers distributely using local images.
 
 \item[\textbf{3.}]{}\textbf{Write config file} 
-
-To config each NF working in the demanded mode, 
-we provide pre-written config file to set up 
+This config file is the only file needs user edit. 
+It includes choice of testing chain, 
+mapping between physical server and docker,
+resource configuration of each docker, 
+host network and other NF specific configurations. 
 
 \item[\textbf{4.}]{}\textbf{One click running} 
+Users can run the test by executing only one command. 
+NI does a series automate processes. 
+First it reads the configuration file edited by users and rewrite the related scripts. 
+
+To config each NF working in the demanded mode, 
+we provide pre-written config file. 
 
 connect docker to OVS bridge
 
@@ -668,11 +676,32 @@ Connection test
 \caption{Throughput}
 \end{figure}
 
+%\begin{figure}[t]
+%\label{cdf}
+%\centering
+%\includegraphics[width=3.3in]{e2e_latency_chain1.pdf}
+%\caption{Throughput}
+%\end{figure}
+
 \begin{figure}[t]
 \label{cdf}
 \centering
 \includegraphics[width=3.3in]{throughput_chain2.eps}
 \caption{Throughput}
+\end{figure}
+
+%\begin{figure}[t]
+%\label{cdf}
+%\centering
+%\includegraphics[width=3.3in]{e2e_latency_chain2.pdf}
+%\caption{Throughput}
+%\end{figure}
+
+\begin{figure}[t]
+\label{cdf}
+\centering
+\includegraphics[width=3.3in]{e2e_latency_chain12.pdf}
+\caption{End-to-end request latency of chain 1 and chain 2.}
 \end{figure}
 
 \section{Related Works}
