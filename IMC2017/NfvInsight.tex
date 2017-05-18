@@ -296,7 +296,7 @@ Table \ref{nfs} lists the basic information of NFs used in our benchmark.
 \textbf{2) Representative NF chains.}
 However, not only single NFs should be typical, but also the NF chains. 
 We referred to ETSI standard documents of SFC 
-(Service Function Chaining) \cite{} 
+(Service Function Chaining) \cite{draft-ietf-sfc-dc-use-cases-06} 
 for the typical use case of service chains 
 in the scenarios of both enterprise user and datacenter.
 We also consulted our industrial partners for real world chaining policies. 
@@ -334,15 +334,14 @@ and output cumulative distribution of latency in the measurement report.
 
 %The main contribution of our work is 
 
-\section{Background and Motivation}
+%\section{Background and Motivation}
+%
+%\subsection{Network Function Virtualization}
+%NFV involves multi-layers in the whole software stack, 
+%
+%The concept of NFV chain
 
-
-\subsection{Network Function Virtualization}
-NFV involves multi-layers in the whole software stack, 
-
-The concept of NFV chain
-
-\subsection{A Survey of NFV Testing Environment \\Deploying}
+\section{A Survey of NFV Testing Environment Deploying}
 %To further prove our observation, 
 To get first-hand information about researchers' experience on 
 NFV testing environment deploying, 
@@ -374,7 +373,7 @@ We also asked for the scale of physical servers and VM instances,
 as well as the virtualization technology they used. 
 The result is shown in Table \ref{survey}.
 
-\begin{table}[h]
+\begin{table}[!t]
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
 \centering
 \begin{tabular}{|c|c|c|c|c|}\hline
@@ -385,7 +384,7 @@ The result is shown in Table \ref{survey}.
 4 & 0.5-1 & 4 & 6-10 & KVM\\\hline
 5 & 1-2 & 4 & 6-10 & \tabincell{c}{Container,\\KVM and other}\\\hline
 6 & 4 & 10 & 100 & KVM\\\hline
-7 & \tabincell{c}{3 \& broken\\into pieces} & 24 & 72 & KVM\\\hline
+7 & 3 & 24 & 72 & KVM\\\hline
 8 & \tabincell{c}{Constantly\\Iterating} & 4 & 1-5 & Xen\\\hline
 \end{tabular}
 \caption{The result of our survey reflects the relationship 
@@ -459,13 +458,6 @@ and  reports the measurement results in the end.
 
 \section{ Benchmark Description}
 
-\begin{figure}[t]
-\label{design}
-\centering
-\includegraphics[width=3.3in]{design2.pdf}
-\caption{An overview of our benchmark design.}
-\end{figure}
-
 \subsection{Overview}
 According to our research and survey, 
 we found that a suite of easy-to-use NFV benchmark is indeed. 
@@ -475,7 +467,8 @@ So, a selected suite of representative VNF
 with widely accepted chaining policy 
 and proper workload generator is needed.
 %The idea of our work is based on an observation that 
-Second, a well-designed benchmark with a bunch of pre-written scripts to automate the deployment process can effectively save time.
+Second, a well-designed benchmark with a bunch of 
+pre-written scripts to automate the deployment process can effectively save time.
 Since NFV involves multi-layers in the whole software stack, 
 the automation process includes VNF image packaging, 
 NF allocation, networking config, forwarding rules installation, 
@@ -496,22 +489,8 @@ with the following three characteristics:
 
 
 \subsection{VNF}
-The first challenge of our work is to select VNF 
-and representative NF chaining policies. 
-%Since VNFaaS (VNF as a Service) and IMS are 
-%the most prevalent NFV use cases, 
-%we choose to .
-We reviewed papers on NFV and find out 
-all the open source VNF has been used. 
-We categorized them into several kinds according to their function, 
-and selected the VNF which needs no modification of the kernel. 
-NI provides DOCKERFILE to packet VNF into docker image, 
-and provides pre-wirtten config files to 
-config each VNF working in the way as demanded. 
-Table \ref{nfs} lists information of the VNF 
-and the workload generator used.
 
-\begin{table}[h]
+\begin{table}[!b]
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
 \centering
 \begin{tabular}{|c|c|c|}\hline
@@ -526,77 +505,123 @@ L7 Cache & Squid & \\\hline
 \label{nfs}
 \end{table}
 
-The following are the brief introduction of the VNF.
+To select representative VNF,  
+%Since VNFaaS (VNF as a Service) and IMS are 
+%the most prevalent NFV use cases, 
+%we choose to .
+We reviewed papers on NFV and find out 
+all the open source implementations has been used. 
+We categorized them into several kinds according to their function, 
+and selected the VNF which needs no modification of the kernel. 
+NI provides DOCKERFILE to packet VNF into docker images, 
+and provides pre-wirtten config files to 
+config each VNF working in the way as demanded. 
+Table \ref{nfs} lists information of the VNF 
+and the workload generator used. 
+Because iptables, Haproxy and Squid need real tcp requests, 
+packet trace replay cannot make them work properly, 
+we use Httperf to generate requests 
+and Apache Server to respond the requests. 
+The following are the brief introduction of the VNF: 
+
 \begin{itemize}
 \item{}
 Clearwater \cite{noauthor_project_nodate} is an open source implementation of IMS (the IP Multimedia Subsystem) designed from the ground up for massively scalable deployment in the Cloud to provide voice, video and messaging services to millions of users. 
 
 \item{}
-Snort \cite{} is an open source intrusion prevention system capable of real-time traffic analysis and packet logging.
+Snort \cite{} is an open source intrusion prevention system 
+capable of real-time traffic analysis and packet logging. 
+We config it working under intrusion detection model. 
 
 \item{}
-iptables \cite{}
+Iptables \cite{}
+We set particular rule to use iptables as DNAT and SNAT. 
 
 \item{}
-Haproxy \cite{} is a reliable, high performance TCP/HTTP load balancer.
+Haproxy \cite{} is a reliable, high performance TCP or HTTP load balancer. 
+We config it working under TCP mode to do L4 load balancing. 
 
 \item{}
 Squid \cite{} is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages.
 \end{itemize}
 
-We referred to \cite{draft-ietf-sfc-dc-use-cases-06}
-
-%\begin{itemize}
-%\item[]
-Edge Firewall (EdgeFW):  SN hosting service functions such as VPN, DHCP, NAT, IP-Audit, Protocol Inspection, DPI etc., with policies primarily focusing on threats external to the data center.
-
-%\item[]
-Application Delivery Controller (ADC): Service Function that distributes traffic across a pool of servers (applications) for efficient resource utilization, application scaling as well as to provide high availability among others.
-       
-%\item[]
-Application Firewall (AppFW):  Service Function that isolates traffic within a segment or protects from application specific threats. This falls into the same class as DPI but deployed much closer to the applications. It is an intra-segment firewall.
-
-%\item[]
-Web Optimization Control (WOC): Service functions to optimize the use of WAN link bandwidth, improve effective user throughput and latencies leading to overall improved user experience. WOC includes various optimizers such as compression, de-duplication, congestion control, application specific optimizers, etc. %WOC requires peers at either end of the WAN link to perform optimizations. The scope of this document is limited to the DC side of the WAN link.
-%\end{itemize}
+\subsection{VNF Chain}
 
 \begin{table*}[!t]
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
 \centering
 \begin{tabular}{|l|l|l|}\hline
-\textbf{} & \multicolumn{1}{c|}{\textbf{NF}} & \multicolumn{1}{c|}{\textbf{chain}} \\\hline
+\textbf{} & \multicolumn{1}{c|}{\textbf{Sample Service Function Chains}} & \multicolumn{1}{c|}{\textbf{Chains in NI}} \\\hline
 SFC1 & EdgeFW & Httperf $\to$ iptables $\to$ Apache \\\hline
 SFC2 & EdgeFW $\to$ ADC & Httperf $\to$ iptables $\to$ Haproxy $\to$ Apache \\\hline
 SFC3 & EdgeFW $\to$ ADC $\to$ AppFW & Httperf $\to$ iptables $\to$ Haproxy $\to$ Snort $\to$ Apache \\\hline
 SFC4 & WOC $\to$ EdgeFW $\to$ ADC $\to$ AppFW & Httperf $\to$  Squid $\to$ iptables $\to$ Haproxy $\to$ Snort $\to$ Apache \\\hline
 \end{tabular}
-\caption{VNF chaining policies.}
-\label{nfs}
+\caption{Sample VNF service function chains and chains provided by our benchmark.}
+\label{chains}
 \end{table*}
 
+To find representative NF chaining policies, 
+we referred to IETF Service Function Chaining Use Cases 
+In Data Centers \cite{draft-ietf-sfc-dc-use-cases-06}. 
+The standard provides several sample service chains, 
+as listed in Table \ref{chains}, the second column. 
+The sample chains are connected by four network function concepts. 
+Definitions of each function concepts are given in the standard file, 
+and are listed in the following part of the paper. 
+The definitions are generalized, 
+actual implementations may vary and have functions overlapped. 
+We form the chains in our benchmark using the open sources 
+implementations in Table \ref{nfs} according to the sample chains. 
+The chains in NI are listed in Table \ref{chains}, the right column.
 
-
-
-\subsection{Design}
-%Framework
-%for ppl from network field
-To achieve the demand of easy to use, 
-users are supposed to run only one command to start the test, 
-and touch only two files, 
-which are the configuration file and the measurement report. 
-The process to use the benchmark includes five steps:
 \begin{itemize}
-\item[]{}Step1 Pre-install 
-\item[]{}Step2 Build images
-\item[]{}Step3 Write config file
-\item[]{}Step4 One click running
-\item[]{}Step5 Get the report
+\item
+Edge Firewall (EdgeFW): Service functions such as VPN, DHCP, NAT, IP-Audit, Protocol Inspection, DPI etc., with policies primarily focusing on threats external to the data center.
+
+\item
+Application Delivery Controller (ADC): Service Function that distributes traffic across a pool of servers (applications) for efficient resource utilization, application scaling as well as to provide high availability among others.
+       
+\item
+Application Firewall (AppFW): Service Function that isolates traffic within a segment or protects from application specific threats. This falls into the same class as DPI but deployed much closer to the applications. It is an intra-segment firewall.
+
+\item
+Web Optimization Control (WOC): Service functions to optimize the use of WAN link bandwidth, improve effective user throughput and latencies leading to overall improved user experience. WOC includes various optimizers such as compression, de-duplication, congestion control, application specific optimizers, etc. %WOC requires peers at either end of the WAN link to perform optimizations. The scope of this document is limited to the DC side of the WAN link.
 \end{itemize}
 
 
+\subsection{Benchmark Usage}
 
-Figure \ref{design} shows 
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.3in]{design2.pdf}
+\caption{An overview of our benchmark design.}
+\label{design}
+\end{figure}
 
+%Framework
+%for ppl from network field
+To achieve the demand of easy to use, 
+users are supposed to run only one command to run the test, 
+and touch only two files, 
+which are the configuration file and the measurement report. 
+The process to use the benchmark includes five steps: 
+\begin{itemize}
+\item[]{}Step1 Pre-install 
+\item[]{}Step2 Build images 
+\item[]{}Step3 Write config file 
+\item[]{}Step4 One click running 
+\item[]{}Step5 Get the report 
+\end{itemize}
+
+Figure \ref{design} shows the architecture of our benchmark. 
+It has three main parts, NFVI, NF service and NI.
+NFVI (NFV Infrastructure) is consisted of hardware resources 
+including compute, storage and network. 
+NF services are deployed upon NFVI, forming a service chain. 
+NI is the key component of our benchmark. 
+It does NF allocation, chaining automatically leveraging NFVI management framework.
+Furthermore 
 
 Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
 
@@ -604,7 +629,7 @@ Connection test
 
 
 
-\section{Implementation}
+%\section{Implementation}
 
 
 \section{Evaluation}
@@ -612,7 +637,7 @@ Connection test
 \begin{figure}[t]
 \label{cdf}
 \centering
-\includegraphics[width=3.3in]{cdf.jpg}
+\includegraphics[width=3.3in]{cdf.pdf}
 \caption{Per-packet latency}
 \end{figure}
 

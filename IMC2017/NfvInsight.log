@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.20)  15 MAY 2017 23:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.20)  18 MAY 2017 14:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -185,11 +185,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen123
 )
-(./NfvInsight.aux
-
-LaTeX Warning: Label `nfs' multiply defined.
-
-)
+(./NfvInsight.aux)
 \openout1 = `NfvInsight.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -204,7 +200,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
- (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count109
 \scratchdimen=\dimen124
@@ -284,9 +281,38 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 LaTeX Warning: No \author given.
 
 
+LaTeX Warning: Citation `noauthor_home_nodate' on page 1 undefined on input lin
+e 263.
+
+
+LaTeX Warning: Citation `gember-jacobson_opennf:_2014' on page 1 undefined on i
+nput line 263.
+
+
+LaTeX Warning: Citation `180672' on page 1 undefined on input line 263.
+
+
+LaTeX Warning: Citation `palkar_e2:_2015' on page 1 undefined on input line 263
+.
+
+
+LaTeX Warning: Citation `bremler-barr_openbox:_2016' on page 1 undefined on inp
+ut line 263.
+
+
+LaTeX Warning: Citation `199352' on page 1 undefined on input line 263.
+
+
 Overfull \hbox (1.75032pt too wide) in paragraph at lines 275--276
 []\OT1/cmr/m/n/10 We also did a sur-vey among top con-fer-ence re-searchers
  []
+
+
+LaTeX Warning: Reference `nfs' on page 1 undefined on input line 294.
+
+
+LaTeX Warning: Citation `draft-ietf-sfc-dc-use-cases-06' on page 1 undefined on
+ input line 299.
 
 
 LaTeX Warning: Reference `chain' on page 1 undefined on input line 303.
@@ -298,64 +324,98 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
+Overfull \hbox (4.71088pt too wide) in paragraph at lines 344--344
+[]\secfnt A SUR-VEY OF NFV TEST-ING EN-VI-RON-
+ []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Warning: Reference `survey' on page 2 undefined on input line 374.
 
 
-Overfull \hbox (7.69487pt too wide) in paragraph at lines 408--420
+Overfull \hbox (7.69487pt too wide) in paragraph at lines 407--419
 \OT1/cmr/m/n/10 soft-ware stack, which in-cludes vir-tu-al-iza-tion, clus-ter m
 an-
  []
 
 
-Overfull \hbox (9.6115pt too wide) in paragraph at lines 427--428
+Overfull \hbox (9.6115pt too wide) in paragraph at lines 426--427
 []\OT1/cmr/m/n/10 Installing proper rules in OpenFlow-enabled switches
  []
 
 
-Overfull \hbox (2.36041pt too wide) in paragraph at lines 454--458
+Overfull \hbox (2.36041pt too wide) in paragraph at lines 453--457
 \OT1/cmr/m/n/10 bench-mark which pro-vides typ-i-cal NF ser-vices and work-
  []
 
-<design2.pdf, id=11, 600.2425pt x 396.48125pt>
-File: design2.pdf Graphic file (type pdf)
- <use design2.pdf>
-Package pdftex.def Info: design2.pdf used on input line 465.
-(pdftex.def)             Requested size: 238.49121pt x 157.53096pt.
 
-Overfull \hbox (1.47273pt too wide) in paragraph at lines 470--484
+Overfull \hbox (1.47273pt too wide) in paragraph at lines 462--477
 \OT1/cmr/m/n/10 fig, for-ward-ing rules in-stal-la-tion, con-nec-tion test-ing,
  and
  []
 
 [2]
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: Reference `nfs' on page 3 undefined on input line 519.
 
 
-Overfull \hbox (15.11154pt too wide) in paragraph at lines 541--542
-[]\OT1/cmr/m/n/10 Haproxy [] is a re-li-able, high per-for-mance TCP/HTTP
+LaTeX Warning: Citation `noauthor_project_nodate' on page 3 undefined on input 
+line 529.
+
+
+LaTeX Warning: Citation `draft-ietf-sfc-dc-use-cases-06' on page 3 undefined on
+ input line 566.
+
+
+LaTeX Warning: Reference `chains' on page 3 undefined on input line 568.
+
+
+LaTeX Warning: Reference `nfs' on page 3 undefined on input line 575.
+
+
+LaTeX Warning: Reference `chains' on page 3 undefined on input line 576.
+
+
+Overfull \hbox (13.30595pt too wide) in paragraph at lines 583--584
+[]\OT1/cmr/m/n/10 Application De-liv-ery Con-troller (ADC): Ser-vice Func-
  []
 
-[3 <./design2.pdf>] <cdf.jpg, id=43, 614.295pt x 356.0803pt>
-File: cdf.jpg Graphic file (type jpg)
- <use cdf.jpg>
-Package pdftex.def Info: cdf.jpg used on input line 615.
-(pdftex.def)             Requested size: 238.49121pt x 138.2405pt.
 
-(./NfvInsight.bbl) [4 <./cdf.jpg>] (./NfvInsight.aux)
+Overfull \hbox (1.41711pt too wide) in paragraph at lines 589--590
+\OT1/cmr/m/n/10 de-duplication, con-ges-tion con-trol, ap-pli-ca-tion spe-
+ []
+
+<design2.pdf, id=15, 600.2425pt x 396.48125pt>
+File: design2.pdf Graphic file (type pdf)
+ <use design2.pdf>
+Package pdftex.def Info: design2.pdf used on input line 597.
+(pdftex.def)             Requested size: 238.49121pt x 157.53096pt.
+
+
+LaTeX Warning: Reference `design' on page 3 undefined on input line 617.
+
+[3] <cdf.pdf, id=20, 289.08pt x 180.675pt>
+File: cdf.pdf Graphic file (type pdf)
+ <use cdf.pdf>
+Package pdftex.def Info: cdf.pdf used on input line 640.
+(pdftex.def)             Requested size: 238.49121pt x 149.05594pt.
+ (./NfvInsight.bbl
+Underfull \vbox (badness 1303) has occurred while \output is active []
+
+ [4 <./design2.pdf> <./cdf.pdf>]) [5
+
+] (./NfvInsight.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
  2596 strings out of 493089
- 34112 string characters out of 6134842
- 106421 words of memory out of 5000000
- 6031 multiletter control sequences out of 15000+600000
+ 34116 string characters out of 6134842
+ 106326 words of memory out of 5000000
+ 6032 multiletter control sequences out of 15000+600000
  37080 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,13n,28p,713b,268s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -369,10 +429,10 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
 2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb>
-Output written on NfvInsight.pdf (4 pages, 184276 bytes).
+Output written on NfvInsight.pdf (5 pages, 167813 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 124 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
