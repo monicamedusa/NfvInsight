@@ -189,28 +189,28 @@
 
 \maketitle
 \begin{abstract}
-NFV is attracting more and more interest in both industry and academia.
-It is promising to reduce cost for network operators and accelerate innovation
-by replacing traditional hardware-based appliance with virtualized functions
+Network functioin virtualization (VFV) is promising to 
+reduce cost for networking operators by replacing 
+traditional hardware-based appliance with virtualized network functions
 deployed in cloud computing environment.
-NFV testing environment deploying
-involves multiple layers in the software stack including
-VNF image packaging, virtualization management,
-network configuration, forwarding rule installation,
-and performance metric measurement.
-According to our survey,
-it takes averagely 1-2 human-month to set up a testing environment.
-Motivated by the time taking process of deployment,
-we decided to develop an easy-to-use NFV benchmark named NI.
-The benchmark has three key features:
-1) Representative NFs
-2) One-click running
-3) Plenty metrics for measurement.
-NI includes 5 VNF %covering half of the NFV use cases,
-and provides typical NF chaining policies.
-NI leverages Kubernetes and Docker to do infrastructure management,
-and OVS to control data flow.
-Our evaluation shows measurement results NI can provide.
+Thus NFV is attracting more and more interest in both industry and academia.
+Unfortunately, setting up an NFV environment is non-trivial. 
+Even for the purpose of NFV research, it takes 1-2 human-month
+to make NFV environments work, according to a quick survey that 
+receive feedback from authors of many SIGCOMM/NSDI papers. 
+To facilitate NFV research, we introduce NfvInsight, 
+an NFV benchmark suite that features representative virtual network functions (VNFs),
+one-click deployment and plenty metrics. Specifically, 
+NfvInsight pre-defined a couple of representative VNFs and VNF-chains 
+and leverages Kubernetes and docker to ease the processes
+of VNF image packaging, virtualization management,
+network configuration, forwarding rule installation and so forth. 
+NfvInsight provides network traffic generators to drive NF-chains
+and collect performance metrics. 
+In this paper, we present a work-in-progress version of NfvInsight that
+currently includes five VNFs %covering half of the NFV use cases,
+and four typical VNF chains. Preliminary experiments demonstrate
+that NfvInsight .
 \end{abstract}
 
 
