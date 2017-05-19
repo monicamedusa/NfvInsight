@@ -1,42 +1,46 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.20)  19 MAY 2017 07:28
+=======
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.12)  19 MAY 2017 07:27
+>>>>>>> refs/remotes/origin/master
 entering extended mode
- restricted \write18 enabled.
- file:line:error style messages enabled.
- %&-line parsing enabled.
 **NfvInsight.tex
-(./NfvInsight.tex
-LaTeX2e <2015/01/01>
-Babel <3.9l> and hyphenation patterns for 79 languages loaded.
-(./sig-alternate-10pt.cls
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/epsfig.sty
+
+(C:\Users\Bao\OneDrive\0.Working-Directory\Ni-Bench\NfvInsight\IMC2017\NfvInsig
+ht.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for loaded.
+
+(C:\Users\Bao\OneDrive\0.Working-Directory\Ni-Bench\NfvInsight\IMC2017\sig-alte
+rnate-10pt.cls (C:\CTEX\MiKTeX\tex\latex\graphics\epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+(C:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+(C:\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+(C:\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+(C:\CTEX\MiKTeX\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(C:\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: pdftex.def on input line 94.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(C:\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+(C:\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+(C:\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count79
 ))
@@ -46,52 +50,52 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \epsfxsize=\dimen104
 \epsfysize=\dimen105
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(C:\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
+Package: amssymb 2009/06/22 v3.00
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+(C:\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks15
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2013/01/14 v2.14 AMS math features
+(C:\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip41
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
+(C:\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
+(C:\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
 \ex@=\dimen106
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(C:\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen107
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
+(C:\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count80
-LaTeX Info: Redefining \frac on input line 210.
+LaTeX Info: Redefining \frac on input line 211.
 \uproot@=\count81
 \leftroot@=\count82
-LaTeX Info: Redefining \overline on input line 306.
+LaTeX Info: Redefining \overline on input line 307.
 \classnum@=\count83
 \DOTSCASE@=\count84
-LaTeX Info: Redefining \ldots on input line 378.
-LaTeX Info: Redefining \dots on input line 381.
-LaTeX Info: Redefining \cdots on input line 466.
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
 \big@size=\dimen108
-LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \macc@depth=\count85
 \c@MaxMatrixCols=\count86
 \dotsspace@=\muskip10
@@ -112,8 +116,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \multlinegap=\skip42
 \multlinetaggap=\skip43
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2665.
-LaTeX Info: Redefining \] on input line 2666.
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
 )
 Document Class 'sig-alternate' <3rd January '07>. Hacked by Anja Feldmann
 Based in part upon document Style `acmconf' <22 May 89>. Hacked 4/91 by
@@ -148,11 +152,11 @@ LaTeX Warning: You have requested document class `sig-alternate-10pt',
 
 Document Class: sig-alternate 2007/03/01 - V1.9 - based on acmproc.cls V1.3 <No
 v. 30 '99>
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/latexsym.sty
+(C:\CTEX\MiKTeX\tex\latex\base\latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
-(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
 )
 \@acmtitlebox=\box28
 \titlenotecount=\count101
@@ -178,14 +182,14 @@ Using 'Abbrev' bibliography style
 \acmcopyr=\toks32
 \boilerplate=\toks33
 \copyrightetc=\toks34
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+) (C:\CTEX\MiKTeX\tex\latex\ltxmisc\url.sty
 \Urlmuskip=\muskip11
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
+(C:\CTEX\MiKTeX\tex\latex\multirow\multirow.sty
 \bigstrutjot=\dimen123
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/subfig/subfig.sty
+(C:\CTEX\MiKTeX\tex\latex\subfig\subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
 
@@ -210,16 +214,14 @@ Package subfig Warning: Your document class has a bad definition
  can't take effect on \endtable.
  Please complain to your document class author.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 57.
+(C:\CTEX\MiKTeX\tex\latex\caption\caption3.sty
+Package: caption3 2011/11/01 v1.4a caption3 kernel (AR)
 \captionmargin=\dimen124
 \captionmargin@=\dimen125
 \captionwidth=\dimen126
-\caption@tempdima=\dimen127
-\caption@indent=\dimen128
-\caption@parindent=\dimen129
-\caption@hangindent=\dimen130
+\caption@indent=\dimen127
+\caption@parindent=\dimen128
+\caption@hangindent=\dimen129
 \abovecaptionskip=\skip44
 \belowcaptionskip=\skip45
 Package caption Info: Unknown document class (or package),
@@ -227,7 +229,7 @@ Package caption Info: Unknown document class (or package),
 )
 \c@KVtest=\count109
 \sf@farskip=\skip46
-\sf@captopadj=\dimen131
+\sf@captopadj=\dimen130
 \sf@capskip=\skip47
 \sf@nearskip=\skip48
 \c@subfigure=\count110
@@ -239,9 +241,8 @@ Package caption Info: Unknown document class (or package),
 \sf@top=\skip49
 \sf@bottom=\skip50
 )
-(./NfvInsight.aux)
-\openout1 = `NfvInsight.aux'.
-
+(C:\Users\Bao\OneDrive\0.Working-Directory\Ni-Bench\NfvInsight\IMC2017\NfvInsig
+ht.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
@@ -254,130 +255,70 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
-
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+ (C:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count116
-\scratchdimen=\dimen132
+\scratchdimen=\dimen131
 \scratchbox=\box30
 \nofMPsegments=\count117
 \nofMParguments=\count118
 \everyMPshowfont=\toks35
 \MPscratchCnt=\count119
-\MPscratchDim=\dimen133
+\MPscratchDim=\dimen132
 \MPnumerator=\count120
 \makeMPintoPDFobject=\count121
 \everyMPtoPDFconversion=\toks36
-) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
-
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Try loading font information for U+msa on input line 190.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+ (C:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 190.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+(C:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for U+lasy on input line 190.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
+(C:\CTEX\MiKTeX\tex\latex\base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 
 LaTeX Warning: No \author given.
 
 
-Overfull \hbox (1.75032pt too wide) in paragraph at lines 281--282
-[]\OT1/cmr/m/n/10 We also did a sur-vey among top con-fer-ence re-searchers
+Overfull \hbox (1.1392pt too wide) in paragraph at lines 281--282
+[]\OT1/cmr/m/n/10 We al-so did a sur-vey a-mong top con-fer-ence re-searcher-
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+ [1{C:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
 
 ]
 Overfull \hbox (4.71088pt too wide) in paragraph at lines 350--350
-[]\secfnt A SUR-VEY OF NFV TEST-ING EN-VI-RON-
+[]\secfnt A SUR-VEY OF N-FV TEST-ING EN-VI-RON-
  []
 
 
 Overfull \hbox (7.69487pt too wide) in paragraph at lines 413--425
-\OT1/cmr/m/n/10 soft-ware stack, which in-cludes vir-tu-al-iza-tion, clus-ter m
-an-
+\OT1/cmr/m/n/10 soft-ware s-tack, which in-cludes vir-tu-al-iza-tion, clus-ter 
+man-
  []
 
 
-Overfull \hbox (9.6115pt too wide) in paragraph at lines 432--433
-[]\OT1/cmr/m/n/10 Installing proper rules in OpenFlow-enabled switches
- []
-
-
-Overfull \hbox (2.36041pt too wide) in paragraph at lines 459--463
-\OT1/cmr/m/n/10 bench-mark which pro-vides typ-i-cal NF ser-vices and work-
- []
-
-
-Overfull \hbox (1.47273pt too wide) in paragraph at lines 468--483
-\OT1/cmr/m/n/10 fig, for-ward-ing rules in-stal-la-tion, con-nec-tion test-ing,
- and
+Overfull \hbox (4.55594pt too wide) in paragraph at lines 432--433
+[]\OT1/cmr/m/n/10 Installing prop-er rules in OpenFlow-enabled switch-
  []
 
 [2]
 Overfull \hbox (13.30595pt too wide) in paragraph at lines 589--590
-[]\OT1/cmr/m/n/10 Application De-liv-ery Con-troller (ADC): Ser-vice Func-
+[]\OT1/cmr/m/n/10 Application De-liv-ery Con-troller (AD-C): Ser-vice Func-
  []
 
 
@@ -385,7 +326,7 @@ Overfull \hbox (1.41711pt too wide) in paragraph at lines 595--596
 \OT1/cmr/m/n/10 de-duplication, con-ges-tion con-trol, ap-pli-ca-tion spe-
  []
 
-<design2.pdf, id=15, 600.2425pt x 396.48125pt>
+<design2.pdf, id=14, 600.2425pt x 396.48125pt>
 File: design2.pdf Graphic file (type pdf)
  <use design2.pdf>
 Package pdftex.def Info: design2.pdf used on input line 603.
@@ -396,40 +337,18 @@ Overfull \hbox (2.46548pt too wide) in paragraph at lines 634--638
 ild
  []
 
-Package epstopdf Info: Source file: <throughput_chain1.eps>
-(epstopdf)                    date: 2017-05-18 17:22:02
-(epstopdf)                    size: 51118 bytes
-(epstopdf)             Output file: <throughput_chain1-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-18 17:23:33
-(epstopdf)                    size: 12180 bytes
-(epstopdf)             Command: <repstopdf --outfile=throughput_chain1-eps-conv
-erted-to.pdf throughput_chain1.eps>
-(epstopdf)             \includegraphics on input line 698.
-Package epstopdf Info: Output file is already uptodate.
-<throughput_chain1-eps-converted-to.pdf, id=20, 414.54875pt x 121.45375pt>
-File: throughput_chain1-eps-converted-to.pdf Graphic file (type pdf)
+<throughput_chain1.pdf, id=19, 414.54875pt x 121.45375pt>
+File: throughput_chain1.pdf Graphic file (type pdf)
 
-<use throughput_chain1-eps-converted-to.pdf>
-Package pdftex.def Info: throughput_chain1-eps-converted-to.pdf used on input l
-ine 698.
+<use throughput_chain1.pdf>
+Package pdftex.def Info: throughput_chain1.pdf used on input line 698.
 (pdftex.def)             Requested size: 238.49121pt x 69.8724pt.
-Package epstopdf Info: Source file: <throughput_chain2.eps>
-(epstopdf)                    date: 2017-05-18 18:12:00
-(epstopdf)                    size: 61476 bytes
-(epstopdf)             Output file: <throughput_chain2-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-18 18:12:52
-(epstopdf)                    size: 14029 bytes
-(epstopdf)             Command: <repstopdf --outfile=throughput_chain2-eps-conv
-erted-to.pdf throughput_chain2.eps>
-(epstopdf)             \includegraphics on input line 701.
-Package epstopdf Info: Output file is already uptodate.
 
-<throughput_chain2-eps-converted-to.pdf, id=21, 596.2275pt x 245.91875pt>
-File: throughput_chain2-eps-converted-to.pdf Graphic file (type pdf)
+<throughput_chain2.pdf, id=20, 596.2275pt x 245.91875pt>
+File: throughput_chain2.pdf Graphic file (type pdf)
 
-<use throughput_chain2-eps-converted-to.pdf>
-Package pdftex.def Info: throughput_chain2-eps-converted-to.pdf used on input l
-ine 701.
+<use throughput_chain2.pdf>
+Package pdftex.def Info: throughput_chain2.pdf used on input line 701.
 (pdftex.def)             Requested size: 238.49121pt x 98.36575pt.
 
 Overfull \hbox (1.82454pt too wide) in paragraph at lines 698--703
@@ -441,33 +360,38 @@ Overfull \hbox (1.82454pt too wide) in paragraph at lines 698--703
  [] 
  []
 
-
-Overfull \hbox (5.3615pt too wide) in paragraph at lines 707--712
-[]\OT1/cmr/m/n/10 We mea-sure through-put of each con-tainer us-ing Docker
- []
-
-<e2e_latency_chain12.pdf, id=22, 289.08pt x 180.675pt>
+<e2e_latency_chain12.pdf, id=21, 289.08pt x 180.675pt>
 File: e2e_latency_chain12.pdf Graphic file (type pdf)
 
 <use e2e_latency_chain12.pdf>
 Package pdftex.def Info: e2e_latency_chain12.pdf used on input line 721.
 (pdftex.def)             Requested size: 238.49121pt x 149.05594pt.
- <cdf_chain1.pdf, id=23, 289.08pt x 180.675pt>
+ <cdf_chain1.pdf, id=22, 289.08pt x 180.675pt>
 File: cdf_chain1.pdf Graphic file (type pdf)
 
 <use cdf_chain1.pdf>
 Package pdftex.def Info: cdf_chain1.pdf used on input line 728.
 (pdftex.def)             Requested size: 238.49121pt x 149.05594pt.
+<<<<<<< HEAD
  (./NfvInsight.bbl [4 <./design2.pdf>]
 Underfull \vbox (badness 1067) has occurred while \output is active []
 
 ) [5 <./throughput_chain1-eps-converted-to.pdf> <./throughput_chain2-eps-conver
 ted-to.pdf> <./e2e_latency_chain12.pdf> <./cdf_chain1.pdf
+=======
+>>>>>>> refs/remotes/origin/master
 
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./cdf_chain1.pdf): PDF inclu
-sion: multiple pdfs with page group included in a single page
->] (./NfvInsight.aux) ) 
+(C:\Users\Bao\OneDrive\0.Working-Directory\Ni-Bench\NfvInsight\IMC2017\NfvInsig
+ht.bbl [4 <C:/Users/Bao/OneDrive/0.Working-Directory/Ni-Bench/NfvInsight/IMC201
+7/design2.pdf>]) [5 <C:/Users/Bao/OneDrive/0.Working-Directory/Ni-Bench/NfvInsi
+ght/IMC2017/throughput_chain1.pdf> <C:/Users/Bao/OneDrive/0.Working-Directory/N
+i-Bench/NfvInsight/IMC2017/throughput_chain2.pdf> <C:/Users/Bao/OneDrive/0.Work
+ing-Directory/Ni-Bench/NfvInsight/IMC2017/e2e_latency_chain12.pdf> <C:/Users/Ba
+o/OneDrive/0.Working-Directory/Ni-Bench/NfvInsight/IMC2017/cdf_chain1.pdf>]
+(C:\Users\Bao\OneDrive\0.Working-Directory\Ni-Bench\NfvInsight\IMC2017\NfvInsig
+ht.aux) ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  3344 strings out of 493089
  48035 string characters out of 6134842
  118855 words of memory out of 5000000
@@ -487,9 +411,26 @@ b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ocal/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texli
 ve/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
 Output written on NfvInsight.pdf (5 pages, 213304 bytes).
+=======
+ 2946 strings out of 495354
+ 40032 string characters out of 3183859
+ 104036 words of memory out of 3000000
+ 6084 multiletter control sequences out of 15000+200000
+ 37385 words of font info for 48 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 41i,13n,46p,713b,349s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/CTEX/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmbx10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmmi10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/CTE
+X/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/CTEX/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+ti10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/CTEX/MiK
+TeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/u
+tmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
+Output written on NfvInsight.pdf (5 pages, 234689 bytes).
+>>>>>>> refs/remotes/origin/master
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 186 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
