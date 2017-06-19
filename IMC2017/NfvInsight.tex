@@ -589,6 +589,26 @@ Application Firewall (AppFW): Service Function that isolates traffic within a se
 Web Optimization Control (WOC): Service functions to optimize the use of WAN link bandwidth, improve effective user throughput and latencies leading to overall improved user experience. WOC includes various optimizers such as compression, de-duplication, congestion control, application specific optimizers, etc. %WOC requires peers at either end of the WAN link to perform optimizations. The scope of this document is limited to the DC side of the WAN link.
 \end{itemize}
 
+\begin{figure}[t]
+\label{cdf}
+\centering
+\includegraphics[width=3.3in]{cdf_chain1.pdf}
+\caption{Per-packet latency}
+\end{figure}
+
+\begin{figure}[t]
+\label{cdf}
+\centering
+\includegraphics[width=3.3in]{throughput_chain1.eps}
+\caption{Throughput}
+\end{figure}
+
+\begin{figure}[t]
+\label{cdf}
+\centering
+\includegraphics[width=3.3in]{throughput_chain2.eps}
+\caption{Throughput}
+\end{figure}
 
 \subsection{Benchmark}
 
@@ -653,27 +673,13 @@ Connection test
 
 
 \section{Evaluation}
+In this section, we evaluate two chains in NFVInsight
 
-\begin{figure}[t]
-\label{cdf}
-\centering
-\includegraphics[width=3.3in]{cdf_chain1.pdf}
-\caption{Per-packet latency}
-\end{figure}
+The testbed we used for our evaluation builds on an edge server(Intel Xeon E5V3-2658 2.2GHz, 12 cores, 32GB, 2$\times$1Gbps NICs) that runs a CentOS 7 system, with Kubernetes 1.4 and Open vSwitch 2.5.1. We encapsulates NFs with Docker 1.12.5 running Ubuntu 14.14.
 
-\begin{figure}[t]
-\label{cdf}
-\centering
-\includegraphics[width=3.3in]{throughput_chain1.eps}
-\caption{Throughput}
-\end{figure}
+\subsection{Throughput and Latency}
+\subsection{Per-packet Latency}
 
-\begin{figure}[t]
-\label{cdf}
-\centering
-\includegraphics[width=3.3in]{throughput_chain2.eps}
-\caption{Throughput}
-\end{figure}
 
 \section{Related Works}
 \section{Conclusions}
