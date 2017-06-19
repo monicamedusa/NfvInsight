@@ -1,0 +1,114 @@
+\section{A Survey of NFV Testing Environment Deploying}
+%To further prove our observation,
+To get first-hand information about researchers' experience on
+NFV testing environment deploying,
+we did a survey among top conference authors
+dedicated in the field of NFV.
+We delivered the survey to sixteen people
+who are the first authors of their papers %published on top conferences
+and we finally collected eight responses.
+
+In the first place, we asked for the number of types of VNF they used,
+and the source of VNF, chaining policy and workload generator.
+Averagely, six types of VNF are used in one paper.
+Most of the VNF are open source implementations,
+though three of our respondents have written their own VNF.
+%a list of open source NFs found in papers??
+The chaining policies are all find in papers or public policies.
+And for the workload generator,
+half of them directly used open source software,
+and half of them wrote by themselves.
+%need some conclusion?
+
+Another question we concerned most is
+the time they spent on deploying a NFV testing environment.
+To more precisely measure the labor time,
+we use the metric of man-month
+which indicates the number of months used
+if the work is done by one person.
+We also asked for the scale of physical servers and VM instances,
+as well as the virtualization technology they used.
+The result is shown in Table \ref{survey}.
+
+\begin{table}[!t]
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\centering
+\begin{tabular}{|c|c|c|c|c|}\hline
+& \tabincell{c}{Man-Month\\Used} & \tabincell{c}{\# of\\Servers} & \tabincell{c}{\# of\\VMs} & \tabincell{c}{Virtualization\\Technology}\\\hline
+1 & $<$0.5 & 4 & 11-20 & KVM\\\hline
+2 & 0.5-1 & 2 & 1-5 & Hyper-V\\\hline
+3 & 0.5-1 & 4 & 1-7 & Container\\\hline
+4 & 0.5-1 & 4 & 6-10 & KVM\\\hline
+5 & 1-2 & 4 & 6-10 & \tabincell{c}{Container,\\KVM and other}\\\hline
+6 & 4 & 10 & 100 & KVM\\\hline
+7 & 3 & 24 & 72 & KVM\\\hline
+8 & \tabincell{c}{Constantly\\Iterating} & 4 & 1-5 & Xen\\\hline
+\end{tabular}
+\caption{The result of our survey reflects the relationship
+between labor consuming and the scale of the testing environment.}
+\label{survey}
+\end{table}
+
+From the responses, we can see the average time
+to deploy a testing environment for NFV is around 1-2 months
+for a cluster not in very large scale.
+It can be quite fast for a experienced person,
+as the responser No.1, who used less than half a month
+setting up a cluster including 4 physical servers and 11-20 VMs.
+However, for the others, the deploying process
+can be time taking and painful.
+Take respondent No.6 and No.7 as examples,
+they built their test environment in quite large scale,
+and it results in much longer setting up time.
+
+NFV setting up involves multi-layers in the whole software stack,
+which includes virtualization, cluster management,
+network virtualization, and NF configuration,
+so that any point can become a bottleneck,
+especially for a green hand.
+Take respondent No.8 as an example,
+Most problems they encountered are related to the hypervisor they used.
+And respondent No.7 said they changed from Xen
+to KVM with Openstack and things got much better.
+We asked the authors for their most painful experiences,
+and we summarize the reasons making the setting up time so long
+as the following:
+
+\begin{itemize}
+\item[-]{}
+Automating the process of setting up the testbed.
+\item[-]{}
+Setting up the datapath (interfaces, DPDK, routing tables, etc).
+\item[-]{}
+Installing proper rules in OpenFlow-enabled switches to enforce chaining.
+\item[-]{}
+Figure out appropriate workload to test different types of VNFs.
+\item[-]{}
+Figuring out how to determine that NFs were done starting up and ready to forward packets.
+\end{itemize}
+
+%Automating the process of setting up the testbed end to end took us a lot of time and many iterations.
+%%No.4
+%
+%We wrote a bunch of scripts that simplified most of the process. The primary trouble was in figuring out how to determine that NFs were done starting up and ready to forward packets.
+%
+%Two parts for me:
+%1. Install, configure and stabilize the open-source software, especially under heavy workload.
+%2. Figure out appropriate workload to test different types of VNFs. It would be great if there is some real-world traffic/workload traces.
+%
+%Traffic generation and topology configuration
+%
+%Setting up the datapath (interfaces, DPDK, routing tables, etc)
+%Installing proper rules in OpenFlow-enabled switches to enforce chaining
+
+One of our responser pointed out that:
+\begin{itemize}
+\item[]{}
+If there is a system that will take as input key parameters (e.g., number of nodes, topology, VM images, choice of hypervisor) and then automatically generates a ready to go set up, that will be of a huge value!
+%!!!!but actually, we cannot...
+\end{itemize}
+This suggestion firms our intention to publish an NFV benchmark
+which provides typical NF services and workload generator,
+automatically run the test according to user configurations,
+and  reports the measurement results in the end.
+
