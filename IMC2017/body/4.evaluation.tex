@@ -1,9 +1,18 @@
 \section{Evaluation}
-We have implemented a demo version of our benchmark.
-It now can work on a single node,
-and measure classic network metrics such as throughput and latency.
-In this section, we evaluate the first two chains in Table \ref{chains}. 
-The testbed we used for our evaluation builds on an general server (Intel Xeon E5V3-2658 2.2GHz, 12 cores, 32GB, 2$\times$1Gbps NICs) which runs CentOS 7 system, with Kubernetes 1.4 and Open vSwitch 2.5.1. We encapsulates NFs with Docker 1.12.5 running Ubuntu 14.14. 
+The development of NfvInsight is still in process. 
+Although we have done most of automatic tools, the number of 
+available VNF-chains is limited. In this section, we only 
+demonstrate several preliminary experiments to basic functionality 
+of the NfvInsight testbed. As shown in Figure \ref{network},
+our experiments are conducted on two 
+physical servers with Intel Xeon E5V3-2658 2.2GHz, 
+12 cores, 32GB DRAM, 10Gbps NICs. The servers run 
+CentOS 7 system, with Kubernetes 1.4 and Open vSwitch 2.5.1. 
+We encapsulates VNFs with Docker 1.12.5 running Ubuntu 14.14.
+We use NfvInsight to deploy VNF-chains on single server 
+as well as two servers and measure network metrics 
+such as throughput and latency.
+In this section, we mainly evaluate the first two chains in Table \ref{chains}.
 
 %\subsection{Throughput}
 
@@ -53,16 +62,16 @@ The testbed we used for our evaluation builds on an general server (Intel Xeon E
 % \label{e2e_latency}
 % \end{figure}
 
-We measure throughput of each container using Docker API. 
-The transmit bytes and receive bytes are recorded two times 
-at the begin and end of test running respectively. 
-Throughput of each NF is calculated 
-by doing subtraction of transmit bytes and divid it by the testing time. 
-We also measured end-to-end request latency by modifying the workload generator Httperf. 
+We measure throughput of each container using Docker API.
+The transmit bytes and receive bytes are recorded two times
+at the begin and end of test running respectively.
+Throughput of each NF is calculated
+by doing subtraction of transmit bytes and divid it by the testing time.
+We also measured end-to-end request latency by modifying the workload generator Httperf.
 It records the latency of each request and output the distribution of latencies.
 
-Figure \ref{throughput} shows the topology of two chains 
-and the throughput are labeled on the arrows. 
+Figure \ref{throughput} shows the topology of two chains
+and the throughput are labeled on the arrows.
 The direction of the arrows indicates the flow of the packets.
 
 
@@ -77,27 +86,27 @@ The direction of the arrows indicates the flow of the packets.
 % \label{nat_latency}
 % \end{figure}
 
-\begin{figure}   
-  \begin{minipage}[t]{0.47\columnwidth}  
-    \centering
-    \includegraphics[width=4.0cm]{fig/e2e_latency_chain12.pdf}  
-     
-    \caption{\small{End-to-end request latency of SFC1 and SFC2.}}  
-    \label{e2e_latency}   
-  \end{minipage}% 
-  \hfill 
-  \hfill 
+\begin{figure}
   \begin{minipage}[t]{0.47\columnwidth}
-    \centering   
-    \includegraphics[width=4.0cm]{fig/cdf_chain1.pdf}   
-    \caption{\small{Per-packet latency of NAT in SFC1}}  
-    \label{nat_latency}   
-  \end{minipage}  
+    \centering
+    \includegraphics[width=4.0cm]{fig/e2e_latency_chain12.pdf}
+
+    \caption{\small{End-to-end request latency of SFC1 and SFC2.}}
+    \label{e2e_latency}
+  \end{minipage}%
+  \hfill
+  \hfill
+  \begin{minipage}[t]{0.47\columnwidth}
+    \centering
+    \includegraphics[width=4.0cm]{fig/cdf_chain1.pdf}
+    \caption{\small{Per-packet latency of NAT in SFC1}}
+    \label{nat_latency}
+  \end{minipage}
 
 \end{figure}
 
-Figure \ref{e2e_latency} shows the end to end latency of SFC1 and SFC2. 
-Figure \ref{nat_latency} shows the per-packet latency of NAT in SFC1. 
+Figure \ref{e2e_latency} shows the end to end latency of SFC1 and SFC2.
+Figure \ref{nat_latency} shows the per-packet latency of NAT in SFC1.
 
 
 
