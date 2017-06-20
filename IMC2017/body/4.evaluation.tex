@@ -1,18 +1,21 @@
 \section{Evaluation}
-The development of NfvInsight is still in process. 
-Although we have done most of automatic tools, the number of 
-available VNF-chains is limited. In this section, we only 
-demonstrate several preliminary experiments to basic functionality 
+The development of NfvInsight is still in process.
+Although we have done most of automatic tools, the number of
+available VNF-chains is limited. In this section, we only
+demonstrate several preliminary experiments to basic functionality
 of the NfvInsight testbed. As shown in Figure \ref{network},
-our experiments are conducted on two 
-physical servers with Intel Xeon E5V3-2658 2.2GHz, 
-12 cores, 32GB DRAM, 10Gbps NICs. The servers run 
-CentOS 7 system, with Kubernetes 1.4 and Open vSwitch 2.5.1. 
+our experiments are conducted on two
+physical servers with Intel Xeon E5V3-2658 2.2GHz,
+12 cores, 32GB DRAM, 10Gbps NICs. The servers run
+CentOS 7 system, with Kubernetes 1.4 and Open vSwitch 2.5.1.
 We encapsulates VNFs with Docker 1.12.5 running Ubuntu 14.14.
-We use NfvInsight to deploy VNF-chains on single server 
-as well as two servers and measure network metrics 
+We use NfvInsight to deploy VNF-chains on single server
+as well as two servers and measure network metrics
 such as throughput and latency.
 In this section, we mainly evaluate the first two chains in Table \ref{chains}.
+
+
+
 
 %\subsection{Throughput}
 
@@ -42,17 +45,6 @@ In this section, we mainly evaluate the first two chains in Table \ref{chains}.
 \label{throughput}
 \end{figure}
 
-\begin{figure}[!t]
-\centering
-\subfloat[SFC1]{\includegraphics[width=2.9in]{fig/inter_node_chain1.pdf}
-\label{inter_node_SFC1}}
-\hfil
-\subfloat[SFC2]{\includegraphics[width=2.9in]{fig/inter_node_chain2.pdf}
-\label{inter_node_SFC2}}
-\hfil
-\caption{Throughput of each NF across two servers}
-\label{inter_throughput}
-\end{figure}
 
 
 % \begin{figure}[t]
@@ -62,18 +54,22 @@ In this section, we mainly evaluate the first two chains in Table \ref{chains}.
 % \label{e2e_latency}
 % \end{figure}
 
-We measure throughput of each container using Docker API.
-The transmit bytes and receive bytes are recorded two times
-at the begin and end of test running respectively.
-Throughput of each NF is calculated
-by doing subtraction of transmit bytes and divid it by the testing time.
-We also measured end-to-end request latency by modifying the workload generator Httperf.
-It records the latency of each request and output the distribution of latencies.
+We measure throughput of each VNF by using Docker API that
+is able to record transmit bytes and receive bytes of each container. 
+Throughput of each VNF is calculated
+by doing subtraction of transmit bytes and dividing it by total testing time.
+We also measure end-to-end latency of each request by modifying the workload generator Httperf,
+which records the latency of each request and output the distribution of latencies.
 
 Figure \ref{throughput} shows the topology of two chains
 and the throughput are labeled on the arrows.
 The direction of the arrows indicates the flow of the packets.
-
+It is worth noting that 
+we only need to modify 6 lines of configuration files
+to form such two different VNF-chains. Once the configuration 
+file is modified, we run only one command to deploy the two chains. 
+This experiment demonstrate that NfvInsight is able to support 
+fast configuration and deployment.
 
 
 %\subsection{Latency}
@@ -105,8 +101,40 @@ The direction of the arrows indicates the flow of the packets.
 
 \end{figure}
 
-Figure \ref{e2e_latency} shows the end to end latency of SFC1 and SFC2.
-Figure \ref{nat_latency} shows the per-packet latency of NAT in SFC1.
+Figure \ref{e2e_latency} and Figure \ref{nat_latency} 
+shows the end to end latency of SFC1 and SFC2 
+as well as the per-packet latency of NAT in SFC1 respectively.
+As mentioned before, to calculate per-packet latency, 
+we slightly modified Httpperf to record latency of each request. 
+For NAT's processing latency, NfvInsight leverages tcpdump to 
+monitor and computer the latency of packets going through the NAT NFV. 
+Currently, NfvInsight only provides two metrics, but we will add 
+more metrics such as CPU utilization, memory working set size and cache miss rate.
+
+The next experiments are conducted on two servers. Thank to 
+Kerbuneters, NfvInsight can easily deploy VNFs on multiple servers. 
+In our experiments, we use NfvInsight to deploy chain-1 and chain-2 
+on two servers, as shown in Figure \ref{inter_throughput}. We can
+see that the bandwidthes decrease compared to the deployment on
+a single server. Then we modified 3 lines of the configuration file 
+to increase the number of NAT and HAProxy instances, and deploy
+the two chain again. By scaling out the two VNFs, the network 
+bandwidths increase significantly, as shown in Figure \ref{inter_throughput}.
+Thus, these experiments demonstrate that NfvInsight is able to 
+perform the scale-out functionality, which is very important for NFV
+deployment. 
+
+\begin{figure}[!t]
+\centering
+\subfloat[SFC1]{\includegraphics[width=2.9in]{fig/inter_node_chain1.pdf}
+\label{inter_node_SFC1}}
+\hfil
+\subfloat[SFC2]{\includegraphics[width=2.9in]{fig/inter_node_chain2.pdf}
+\label{inter_node_SFC2}}
+\hfil
+\caption{Throughput of each NF across two servers}
+\label{inter_throughput}
+\end{figure}
 
 
 \begin{figure}[!t]
@@ -118,7 +146,6 @@ Figure \ref{nat_latency} shows the per-packet latency of NAT in SFC1.
 \label{2haproxy}}
 \hfil
 \caption{Throughput of SFC2 before and after HaProxy scaling-out.}
-\label{throughput}
+\label{scaleout_throughput}
 \end{figure}
-
 
