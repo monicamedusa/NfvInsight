@@ -43,7 +43,7 @@ And give out possible use cases of our benchmark.
 %
 %measurement
 
-\subsection{Benchmark}
+\subsection{Overview}
 
 \begin{figure}[!t]
 \centering
@@ -271,14 +271,23 @@ First, for all these researches, a universally used baseline is lacked
 for comparison experiments.
 
 \section{Implementation}
+NI is the core component of our benchmark, 
+it automates the process of running an NFV experiment. 
+In this section, we will introduce the multiple server network environment 
+which NI operates on, 
+as well as detailed implementation of NI.
+
 \subsection{Multiple Server Network}
+
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3.3in]{fig/network.pdf}
 \caption{Network of multiple server.}
-\label{design}
+\label{network}
 \end{figure}
 
+The network environment NI works on is shown in Figure \ref{network}. 
+To 
 
 
 \subsection{Auto Deploy}
