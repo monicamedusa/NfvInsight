@@ -1,22 +1,23 @@
 \section{A Survey of NFV Testing Environment Deploying}
 %To further prove our observation,
 To get first-hand information about researchers' experience on
-NFV testing environment deploying,
+the deployment of NFV testing environment,
 we did a survey among top conference authors
 dedicated in the field of NFV.
-We delivered the survey to sixteen people
-who are the first authors of their papers %published on top conferences
+We delivered the survey to sixteen researchers
+who are the first authors of their papers published on %published on top conferences
+SIGCOMM/SOSP/NSDI of recent years
 and we finally collected eight responses.
 
-In the first place, we asked for the number of types of VNF they used,
+In the first place, we asked the number of types of VNF they used,
 and the source of VNF, chaining policy and workload generator.
 Averagely, six types of VNF are used in one paper.
 Most of the VNF are open source implementations,
 though three of our respondents have written their own VNF.
 %a list of open source NFs found in papers??
-The chaining policies are all find in papers or public policies.
-And for the workload generator,
-half of them directly used open source software,
+The chaining policies are all found in papers or public policies.
+And for workload generator,
+half of researchers directly used open source software,
 and half of them wrote by themselves.
 %need some conclusion?
 
@@ -26,7 +27,7 @@ To more precisely measure the labor time,
 we use the metric of man-month
 which indicates the number of months used
 if the work is done by one person.
-We also asked for the scale of physical servers and VM instances,
+We also asked the scale of physical servers and VM instances,
 as well as the virtualization technology they used.
 The result is shown in Table \ref{survey}.
 
@@ -49,19 +50,19 @@ between labor consuming and the scale of the testing environment.}
 \label{survey}
 \end{table}
 
-From the responses, we can see the average time
-to deploy a testing environment for NFV is around 1-2 months
-for a cluster not in very large scale.
+According to the feedback, we can see the average time
+of deploying a testing environment for NFV is around 1-2 months
+for a cluster that is not in very large scale.
 It can be quite fast for a experienced person,
-as the responser No.1, who used less than half a month
+as the feedback No.1, who used less than half a month
 setting up a cluster including 4 physical servers and 11-20 VMs.
 However, for the others, the deploying process
-can be time taking and painful.
-Take respondent No.6 and No.7 as examples,
+can be time-consuming and painful.
+Take feedback No.6 and No.7 as examples,
 they built their test environment in quite large scale,
-and it results in much longer setting up time.
+resulting in much longer setting up time.
 
-NFV setting up involves multi-layers in the whole software stack,
+setting up an NFV environment involves multi-layers in the whole software stack,
 which includes virtualization, cluster management,
 network virtualization, and NF configuration,
 so that any point can become a bottleneck,
@@ -101,7 +102,7 @@ Figuring out how to determine that NFs were done starting up and ready to forwar
 %Setting up the datapath (interfaces, DPDK, routing tables, etc)
 %Installing proper rules in OpenFlow-enabled switches to enforce chaining
 
-One of our responser pointed out that:
+One of feedback pointed out that:
 
 %\begin{itemize}
 %\item[]{}
@@ -114,7 +115,7 @@ The survey indicates the strong demand of an NFV benchmark
 which provides typical NF services and workload generator,
 automatically runs tests according to user configurations,
 and reports the measurement results in the end.
-In particular, the benchmark should support swift deployment 
+In particular, the benchmark should support swift deployment
 especially for large NF scale.
 
 

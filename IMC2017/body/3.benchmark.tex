@@ -3,20 +3,22 @@
 %\subsection{Overview}
 According to our research and survey,
 %we found that a suite of easy-to-use NFV benchmark is indeed.
-the most urgent demand of an NFV benchmark is 
-to reduce the deployment time which includes 
-setting up virtualization platform and its network environment, 
-packing and managing VNF images, 
-writing scripts to automatically start NFs and chain them up. 
-Another requirement of the benchmark is to provide 
-representative VNF with widely accepted chaining policies, 
+the most urgent demand of an NFV benchmark is
+to reduce the deployment time which includes
+setting up virtualization platform and its network environment,
+packing and managing VNF images,
+writing scripts to automatically start NFs and chain them up.
+Another requirement of the benchmark is to provide
+representative VNF with widely accepted chaining policies,
 as well as proper workload generator to drive the chains.
-A suite of off-the-shelf benchmark can also 
-reduce the time spent on NF selecting. 
+A suite of off-the-shelf benchmark can also
+reduce the time spent on NF selecting.
 
-In this section, we first describe the overall architect of our benchmark 
-and the simple steps for a user to do deployment and testing. 
-Then we introduce the NFs and chains we use. 
+In this paper, we introduce NfvInsight, an NFV testbed that meets these
+requirements. 
+In this section, we first describe the overall architect of our benchmark
+and the simple steps for a user to do deployment and testing.
+Then we introduce the NFs and chains we use.
 And give out possible use cases of our benchmark.
 
 %So, a selected suite of representative VNF
@@ -62,25 +64,25 @@ And give out possible use cases of our benchmark.
 The overall architecture of our benchmark is shown in Figure \ref{design}.
 It has three main parts, NFVI, NF services and NI.
 NFVI (NFV Infrastructure) consists of hardware resources
-including compute, storage and network. 
-NF services are deployed upon NFVI, forming a service chain. 
-To leverage docker's light-weight isolation 
-and its convenience of packing a runtime environment, 
-we chose to use Kubernetes as the infrastructure management framework, 
-which manages the physical cluster as well as the dockers and images. 
-OVS is used as the data path, 
+including compute, storage and network.
+NF services are deployed upon NFVI, forming a service chain.
+To leverage docker's light-weight isolation
+and its convenience of packing a runtime environment,
+we chose to use Kubernetes as the infrastructure management framework,
+which manages the physical cluster as well as the dockers and images.
+OVS is used as the data path,
 and forwarding rules installed on OVS chains up the NF services.
 The details of our network settings will be introduced in section 4.1.
 
-NI (NfvInsight) is the key component of our benchmark 
-(highlighted in grey in Figure  \ref{design}), 
-which consists of a bunch of scripts 
+NI (NfvInsight) is the key component of our benchmark
+(highlighted in grey in Figure  \ref{design}),
+which consists of a bunch of scripts
 to automate the process of NF chain deployment.
-To simplify its usage, 
+To simplify its usage,
 users are supposed to run only one command to start the test,
-and touch only two files, 
+and touch only two files,
 one configuration file and one measurement report.
-NI reads in the customer configuration file, 
+NI reads in the customer configuration file,
 parse it, and generate scripts to start docker, config network, and run NF.
 %It does NF allocation and chaining automatically leveraging NFVI management framework.
 Furthermore, it does connection test and performance monitoring during test running.
@@ -90,9 +92,9 @@ The process for a researcher to use the benchmark includes five simple steps:
 \begin{itemize}
 \item[\textbf{1.}]{}\textbf{Run the pre-install script.}
 
-In our benchmark, a pre-install script is provided to 
+In our benchmark, a pre-install script is provided to
 help users install the prerequisite framework including Kubernetes and OVS
-and do some configuration. 
+and do some configuration.
 %In the first step, users need to install Kubernetes, OVS
 %and Openflow controller for their physical server cluster.
 %Kubernetes is an open-source system for automating deployment, scaling,
@@ -102,14 +104,14 @@ and do some configuration.
 
 \item[\textbf{2.}]{}\textbf{Run the image-building script.}
 
-The image-building script helps build images listed in Table \ref{nfs} from DOCKERFILE, and setup a private image registry 
+The image-building script helps build images listed in Table \ref{nfs} from DOCKERFILE, and setup a private image registry
 for docker creation in distributed cluster.
 
 \item[\textbf{3.}]{}\textbf{Write config file.}
 
 This config file is the only file needs user edit.
-We provide a config template for each chain 
-designed in a uniform concise format shown in Figure \ref{config}. 
+We provide a config template for each chain
+designed in a uniform concise format shown in Figure \ref{config}.
 The configurable variable includes resource of each docker,
 mapping between physical server and docker,
 number of NF instances, and other NF specific configurations.
@@ -117,7 +119,7 @@ number of NF instances, and other NF specific configurations.
 \item[\textbf{4.}]{}\textbf{Run test with one click.}
 
 Users can run the test by executing only one command.
-NI does a series automate processes. 
+NI does a series automate processes.
 The details will be introduced in section 4.2.
 
 \item[\textbf{5.}]{}\textbf{Get the report.}
