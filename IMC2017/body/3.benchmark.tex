@@ -135,7 +135,7 @@ and output a report.
 \centering
 \begin{tabular}{|c|c|c|}\hline
 \textbf{Category} & \textbf{NF} & \tabincell{c}{\textbf{Workload}\\\textbf{Generator}}\\\hline
-IMS & Clearwater & SipP \\\hline
+IMS & Clearwater & SIPps \\\hline
 IDS & Snort & \multirow{2}{*}{Httperf} \\\cline{1-2}
 NAT & iptables & \\\cline{1-2}
 L4 Load Balancer & Haproxy & \multirow{2}{*}{Polygraph} \\\cline{1-2}
@@ -190,9 +190,11 @@ SipP is specific for Clearwater,
 while Httperf and Polygraph are used to drive the service chains.
 \begin{itemize}
 \item{}
-SipP \cite{}
+SIPp \cite{}
+is a free Open Source test tool / traffic generator for the SIP protocol.
 \item{}
 Httperf \cite{}
+is a tool for measuring web server performance. It provides a flexible facility for generating various HTTP workloads and for measuring server performance.
 \item{}
 Web Polygraph \cite{}
 is a freely available performance testing tool for caching proxies, origin server accelerators, L4/7 switches, content filters, and other Web intermediaries.
