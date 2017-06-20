@@ -18,8 +18,8 @@ In this paper, we introduce NfvInsight, an NFV testbed that meets these
 requirements.
 In this section, we first describe the overall architect of NfvInsight
 and an brief instructions for a user to do deployment and testing.
-Then we introduce the current NFs and chains of NfvInsight as well as 
-potential use cases. 
+Then we introduce the current NFs and chains of NfvInsight as well as
+potential use cases.
 
 %So, a selected suite of representative VNF
 %with widely accepted chaining policy
@@ -85,8 +85,8 @@ one configuration file and one measurement report.
 NI reads in the customer configuration file (shown in Figure \ref{config}),
 parse the file, and generate scripts to start docker, config network, and run NF.
 %It does NF allocation and chaining automatically leveraging NFVI management framework.
-Furthermore, the NI component is responsible for connection testing and performance monitoring 
-before regular tests. 
+Furthermore, the NI component is responsible for connection testing and performance monitoring
+before regular tests.
 
 The process for a researcher to use the benchmark includes five steps:
 
@@ -103,7 +103,7 @@ and complete configuration automatically.
 %OVS bridge and Openflow global control is needed.
 
 \item[\textbf{2.}]{}\textbf{Download NF images or run an image-building script to build your owns.}
-NfvInsight already provides several docker images. Alternatively, users can run a script to build 
+NfvInsight already provides several docker images. Alternatively, users can run a script to build
 his own image locally. The image-building script helps build images listed in Table \ref{nfs} from DOCKERFILE, and setup a private image registry for docker creation in distributed cluster.
 
 \item[\textbf{3.}]{}\textbf{Modify a configuration file.}
@@ -147,20 +147,20 @@ To select representative VNF,
 %Since VNFaaS (VNF as a Service) and IMS are
 %the most prevalent NFV use cases,
 %we choose to .
-We reviewed papers on NFV and find out
-all the open source implementations has been used.
-We categorized them into several kinds according to their function,
-and selected the VNF which needs no modification of the kernel.
-NI provides DOCKERFILE to packet VNF into docker images,
-and provides pre-wirtten config files to
+We reviewed papers on NFV and found that they mainly use
+open source implementations.
+We grouped them into several categories according to their functionalities,
+and selected those VNFs which need no modification to OS kernel.
+NfvInsight provides DOCKERFILE to packet those VNFs into docker images,
+and provides pre-defined config files to
 config each VNF working in the way as demanded.
-Table \ref{nfs} lists information of the VNF
-and the workload generator used.
+Table \ref{nfs} lists information of the VNFs
+and the workload generators used.
 Because iptables, Haproxy and Squid need real tcp requests,
 packet trace replay cannot make them work properly,
 we use Httperf to generate requests
 and Apache Server to respond the requests.
-The following are the brief introduction of the VNF:
+Below are the brief introduction of the VNFs:
 
 \begin{itemize}
 \item{}
@@ -183,9 +183,9 @@ We config it working under TCP mode to do L4 load balancing.
 Squid \cite{Squid} is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages.
 \end{itemize}
 
-In our current version, we provide the following three workload generators.
+In current version of NfvInsight, we provide the following three workload generators.
 SipP is specific for Clearwater,
-while Httperf and Polygraph are used to drive the service chains.
+while Httperf and Polygraph are used to drive the other service chains.
 \begin{itemize}
 \item{}
 SIPp \cite{SIPp}
@@ -269,10 +269,10 @@ First, for all these researches, a universally used baseline is lacked
 for comparison experiments.
 
 \section{Implementation}
-NI is the core component of our benchmark, 
-it automates the process of running an NFV experiment. 
-In this section, we will introduce the multiple server network environment 
-which NI operates on, 
+NI is the core component of our benchmark,
+it automates the process of running an NFV experiment.
+In this section, we will introduce the multiple server network environment
+which NI operates on,
 as well as detailed implementation of NI.
 
 \subsection{Multiple Server Network}
@@ -284,8 +284,8 @@ as well as detailed implementation of NI.
 \label{network}
 \end{figure}
 
-The network environment NI works on is shown in Figure \ref{network}. 
-To 
+The network environment NI works on is shown in Figure \ref{network}.
+To
 
 
 \subsection{Auto Deploy}
