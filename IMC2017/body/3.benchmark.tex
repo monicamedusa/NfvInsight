@@ -52,7 +52,12 @@ And give out possible use cases of our benchmark.
 \label{design}
 \end{figure}
 
-%Framework
+\begin{figure}[!t]
+\centering
+\includegraphics[width=1.8in]{fig/config_file.pdf}
+\caption{An example of the config file format.}
+\label{config}
+\end{figure}
 
 The overall architecture of our benchmark is shown in Figure \ref{design}.
 It has three main parts, NFVI, NF services and NI.
@@ -103,13 +108,17 @@ for docker creation in distributed cluster.
 \item[\textbf{3.}]{}\textbf{Write config file.}
 
 This config file is the only file needs user edit.
-
+We provide a config template for each chain 
+designed in a uniform concise format shown in Figure \ref{config}. 
+The configurable variable includes resource of each docker,
+mapping between physical server and docker,
+number of NF instances, and other NF specific configurations.
 
 \item[\textbf{4.}]{}\textbf{Run test with one click.}
 
 Users can run the test by executing only one command.
-NI does a series automate processes.
-
+NI does a series automate processes. 
+The details will be introduced in section 4.2.
 
 \item[\textbf{5.}]{}\textbf{Get the report.}
 
@@ -176,6 +185,16 @@ We config it working under TCP mode to do L4 load balancing.
 Squid \cite{} is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages.
 \end{itemize}
 
+workload generator
+\begin{itemize}
+\item{}
+Sipp
+\item{}
+Httperf
+\item{}
+Polygraph
+\end{itemize}
+
 \subsection{VNF Chain}
 
 \begin{table*}[!t]
@@ -183,10 +202,10 @@ Squid \cite{} is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and mo
 \centering
 \begin{tabular}{|l|l|l|}\hline
 \textbf{} & \multicolumn{1}{c|}{\textbf{Sample Service Function Chains}} & \multicolumn{1}{c|}{\textbf{Chains in NI}} \\\hline
-SFC1 & EdgeFW & Httperf $\to$ iptables $\to$ Apache \\\hline
-SFC2 & EdgeFW $\to$ ADC & Httperf $\to$ iptables $\to$ Haproxy $\to$ Apache \\\hline
-SFC3 & EdgeFW $\to$ ADC $\to$ AppFW & Httperf $\to$ iptables $\to$ Haproxy $\to$ Snort $\to$ Apache \\\hline
-SFC4 & WOC $\to$ EdgeFW $\to$ ADC $\to$ AppFW & Httperf $\to$  Squid $\to$ iptables $\to$ Haproxy $\to$ Snort $\to$ Apache \\\hline
+SFC1 & EdgeFW & Httperf/Polyclt $\to$ iptables $\to$ Apache/Polysvr \\\hline
+SFC2 & EdgeFW $\to$ ADC & Httperf/Polyclt $\to$ iptables $\to$ Haproxy $\to$ Apache/Polysvr \\\hline
+SFC3 & EdgeFW $\to$ ADC $\to$ AppFW & Polyclt $\to$ iptables $\to$ Haproxy $\to$ Snort $\to$ Polysvr \\\hline
+SFC4 & WOC $\to$ EdgeFW $\to$ ADC $\to$ AppFW & Polyclt $\to$  Squid $\to$ iptables $\to$ Haproxy $\to$ Snort $\to$ Polysvr \\\hline
 \end{tabular}
 \caption{Sample VNF service function chains and chains provided by our benchmark.}
 \label{chains}
@@ -247,15 +266,9 @@ First, for all these researches, a universally used baseline is lacked
 for comparison experiments.
 
 \section{Implementation}
-\subsection{Multiple Server}
-\subsection{Image Registry}
-\subsection{Config File}
-It includes choice of testing chain,
-mapping between physical server and docker,
-resource configuration of each docker,
-host network and other NF specific configurations.
-To config each NF working in the demanded mode,
-we provide pre-written config files for each NF.
+\subsection{Multiple Server Network}
+
+
 \subsection{Auto Deploy}
 First it reads the configuration file edited by users and rewrites the related scripts,
 which including container deployment scripts and NF config files.
