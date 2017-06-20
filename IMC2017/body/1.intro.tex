@@ -21,10 +21,10 @@ Thus NFV rapidly gained significant attentions by industry and academia. Plenty 
 
 However, although virtualization save much time of NFs management for us, building a NFV testbed still seems to be a time-consuming and annoying experience. We did a survey recently among experienced researchers on networking who claimed ever build a NFV testbed. Surprisingly, we find that it takes almost 1-2 months to build up a NF cluster with less than 10 VM instances. when the scale of instances increase to over 50, the buildup process extends to 3-4 months, or even more. One of our respondent said that they were still keeping on iterating and improving their testbed constantly. It is hard to imagine what a disaster it is for newcomers who intend to make some optimizations and contributions to the community. 
 
-Therefore, we think that the time is ripe to consider a NFV benchmark suite that aims to greatly simplify the process of building a NFV testbed, especially for the newcomers. To fulfill this goal, we need to address three questions:
+Therefore, we think that the time is ripe to consider a NFV benchmark suite that aims to greatly simplify the process of setting up a NFV testbed, especially for the newcomers. To fulfill this goal, we need to address three questions:
 \textit{1) which are the representative NFs and NFs chains?} For the newcomers, it is frustrated to choose some representative NFs among NFs of various functions of various open source implementations. Besides, the order of NFs chained together is also important, and should be closed to the production environments as much as possible. Thus, the NFV benchmark should consist of a bunch of representative NFs and NFs chains widely accepted.
-2) How to accelerate the buildup process? The most disturbing part of buildup process is to install and configure all the NFs one by one, with endless package dependency and manual reading. We should leverage the benefit of virtualization which is ``build once, run everywhere''.
-3) what metrics should we collect and present? Last but not least, which metrics would be the proof of the measurement and demonstrate the effectiveness of the optimization?
+\textit{2) How to accelerate the buildup process?} The most disturbing part of buildup process is to install and configure all the NFs one by one, with endless package dependency and manual reading. We should leverage the benefit of virtualization which is ``build once, run everywhere''.
+\textit{3) what metrics should we collect and present?} Last but not least, which metrics would be the proof of the measurement and demonstrate the effectiveness of the optimization?
 
 Considering these questions, we present \textbf{NFVInsight}, a suite of NF benchmarks that help users set up their own NFV testbeds easily and rapidly. NFVInsight has following characteristics:
 % However, even though a suite of easy-to-use NFV benchmark is not yet existed. It is unavoidable to experience a time consuming process finding both open source software and proper chaining policies. According to our observation, most NFs used in papers are different open source implementations linked in different kinds of NF chain policies. So that, there is not yet a general baseline for measurement and comparison. Furthermore, the workload generator and network traffic trace used are also different, traces need to be provided to test different NF chains.
@@ -89,8 +89,15 @@ We measure latency in the granularity of per-packet and per-NF,
 and output cumulative distribution of latency in the measurement report.
 
 \textbf{Contributions.} We make the following contributions:
-
-
+\begin{itemize}
+\item
+To the best of our knowledge, we are the first NFV benchmark suite to simplify the process of
+setting up a NFV testbed;
+\item
+We conduct a survey of sixteen top conference authors about NFV testing environment deploying and analyze the time they spent on deploying a NFV testing environment;
+\item
+We conduct an experiment with NFVInsight inter-and-intra physical servers separately, and demonstrate that NFVInsight is easy to deploy and scale out. 
+\end{itemize}
 
 %The main contribution of our work is
 
