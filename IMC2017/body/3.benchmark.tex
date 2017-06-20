@@ -1,25 +1,39 @@
-\section{ Benchmark Description}
+\section{Benchmark Description}
 
-\subsection{Overview}
+%\subsection{Overview}
 According to our research and survey,
-we found that a suite of easy-to-use NFV benchmark is indeed.
-First, for all these researches, a universally used baseline is lacked
-for comparison experiments.
-So, a selected suite of representative VNF
-with widely accepted chaining policy
-and proper workload generator is needed.
-%The idea of our work is based on an observation that
-Second, a well-designed benchmark with a bunch of
-pre-written scripts to automate the deployment process can effectively save time.
-Since NFV involves multi-layers in the whole software stack,
-the automation process includes VNF image packaging,
-NF allocation, networking config, forwarding rules installation,
-connection testing, and metrics measurement.
-%The goal and challenges of the work
+%we found that a suite of easy-to-use NFV benchmark is indeed.
+the most urgent demand of an NFV benchmark is 
+to reduce the deployment time which includes 
+setting up virtualization platform and its network environment, 
+packing and managing VNF images, 
+writing scripts to automatically start NFs and chain them up. 
+Another requirement of the benchmark is to provide 
+representative VNF with widely accepted chaining policies, 
+as well as proper workload generator to drive the chains.
+A suite of off-the-shelf benchmark can also 
+reduce the time spent on NF selecting. 
 
-The goal of our work is to provide a benchmark suite
-with the following three characteristics:
-1) Representing typical NFs 2) Easy to use 3) Plenty metrics for measurement.
+In this section, we first describe the overall architect of our benchmark 
+and the simple steps for a user to do deployment and testing. 
+Then we introduce the NFs and chains we use. 
+And give out possible use cases of our benchmark.
+
+%So, a selected suite of representative VNF
+%with widely accepted chaining policy
+%and proper workload generator is needed.
+%%The idea of our work is based on an observation that
+%Second, a well-designed benchmark with a bunch of
+%pre-written scripts to automate the deployment process can effectively save time.
+%Since NFV involves multi-layers in the whole software stack,
+%the automation process includes VNF image packaging,
+%NF allocation, networking config, forwarding rules installation,
+%connection testing, and metrics measurement.
+%%The goal and challenges of the work
+%
+%The goal of our work is to provide a benchmark suite
+%with the following three characteristics:
+%1) Representing typical NFs 2) Easy to use 3) Plenty metrics for measurement.
 
 %Challenges:
 %
@@ -28,6 +42,89 @@ with the following three characteristics:
 %K8s+ovs
 %
 %measurement
+
+\subsection{Benchmark}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.3in]{fig/design2.pdf}
+\caption{An overview of our benchmark design.}
+\label{design}
+\end{figure}
+
+%Framework
+
+The overall architecture of our benchmark is shown in Figure \ref{design}.
+It has three main parts, NFVI, NF services and NI.
+NFVI (NFV Infrastructure) consists of hardware resources
+including compute, storage and network. 
+NF services are deployed upon NFVI, forming a service chain. 
+To leverage docker's light-weight isolation 
+and its convenience of packing a runtime environment, 
+we chose to use Kubernetes as the infrastructure management framework, 
+which manages the physical cluster as well as the dockers and images. 
+OVS is used as the data path, 
+and forwarding rules installed on OVS chains up the NF services.
+The details of our network settings will be introduced in section 4.1.
+
+NI (NfvInsight) is the key component of our benchmark, 
+which consists of a bunch of scripts 
+to automate the process of NF chain deployment.
+To simplify its usage, 
+users are supposed to run only one command to start the test,
+and touch only two files, 
+one configuration file and one measurement report.
+NI reads in the customer configuration file, 
+parse it, and generate scripts to start docker, config network, and run NF.
+%It does NF allocation and chaining automatically leveraging NFVI management framework.
+Furthermore, it does connection test and performance monitoring during test running.
+
+The process for a researcher to use the benchmark includes five simple steps:
+
+\begin{itemize}
+\item[\textbf{1.}]{}\textbf{Run the pre-install script.}
+In the first step, users need to install Kubernetes, OVS
+and Openflow controller for their physical server cluster.
+%Kubernetes is an open-source system for automating deployment, scaling,
+%and management of containerized applications.
+To force forwarding packets cross nodes,
+OVS bridge and Openflow global control is needed.
+
+\item[\textbf{2.}]{}\textbf{Run the image building script.}
+We provide DOCKERFILE to build images for each VNF listed in Table \ref{nfs},
+A private registry is needed to manage the images,
+so that Kubernetes can create containers distributely using local images.
+
+\item[\textbf{3.}]{}\textbf{Write config file.}
+This config file is the only file needs user edit.
+It includes choice of testing chain,
+mapping between physical server and docker,
+resource configuration of each docker,
+host network and other NF specific configurations.
+To config each NF working in the demanded mode,
+we provide pre-written config files for each NF.
+
+\item[\textbf{4.}]{}\textbf{Run test with one click.}
+Users can run the test by executing only one command.
+NI does a series automate processes.
+First it reads the configuration file edited by users and rewrites the related scripts,
+which including container deployment scripts and NF config files.
+Then the NF Allocation module deploys containers according to user configuration.
+When containers are started and their status turn to `ready',
+NF Chaining module adds virtual NIC for each container,
+connects them to OVS bridge,
+and installs Openflow forwarding rules according to the chaining policy.
+To check whether the chain works,
+the Connection Test module send a TCP request
+from the packet generator and check if it gets response from Apache server.
+If the connection test is passed,
+the test is run and metric measurement begins.
+
+\item[\textbf{5.}]{}\textbf{Get the report.}
+The Performance Monitor module does metric measurement
+and output a report.
+
+\end{itemize}
 
 
 \subsection{VNF}
@@ -152,73 +249,15 @@ Web Optimization Control (WOC): Service functions to optimize the use of WAN lin
 % \caption{Throughput}
 % \end{figure}
 
-\subsection{Benchmark}
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=3.3in]{fig/design2.pdf}
-\caption{An overview of our benchmark design.}
-\label{design}
-\end{figure}
+\subsection{Use Case for NfvInsight}
+First, for all these researches, a universally used baseline is lacked
+for comparison experiments.
 
-%Framework
-%for ppl from network field
-To achieve the demand of easy to use,
-users are supposed to run only one command to start the test,
-and touch only two files,
-one configuration file and one measurement report.
+\section{Implementation}
+\subsection{Multiple Server}
+\subsection{Image Registry}
+\subsection{Config File}
+\subsection{Auto Deploy}
+\subsection{Measurement}
 
-The architecture of our benchmark is shown in Figure \ref{design}.
-It has three main parts, NFVI, NF service and NI.
-NFVI (NFV Infrastructure) is consisted of hardware resources
-including compute, storage and network.
-NF services are deployed upon NFVI, forming a service chain.
-NI is the key component of our benchmark.
-It does NF allocation and chaining automatically leveraging NFVI management framework.
-Furthermore, it does connection test and performance monitoring during test running.
-The process to use the benchmark includes five steps:
-
-\begin{itemize}
-\item[\textbf{1.}]{}\textbf{Pre-install}
-In the first step, users need to install Kubernetes, OVS
-and Openflow controller for their physical server cluster.
-Kubernetes is an open-source system for automating deployment, scaling,
-and management of containerized applications.
-To force forwarding packets cross nodes,
-OVS bridge and Openflow global control is needed.
-
-\item[\textbf{2.}]{}\textbf{Build images}
-We provide DOCKERFILE to build images for each VNF listed in Table \ref{nfs},
-A private registry is needed to manage the images,
-so that Kubernetes can create containers distributely using local images.
-
-\item[\textbf{3.}]{}\textbf{Write config file}
-This config file is the only file needs user edit.
-It includes choice of testing chain,
-mapping between physical server and docker,
-resource configuration of each docker,
-host network and other NF specific configurations.
-To config each NF working in the demanded mode,
-we provide pre-written config files for each NF.
-
-\item[\textbf{4.}]{}\textbf{One click running}
-Users can run the test by executing only one command.
-NI does a series automate processes.
-First it reads the configuration file edited by users and rewrites the related scripts,
-which including container deployment scripts and NF config files.
-Then the NF Allocation module deploys containers according to user configuration.
-When containers are started and their status turn to `ready',
-NF Chaining module adds virtual NIC for each container,
-connects them to OVS bridge,
-and installs Openflow forwarding rules according to the chaining policy.
-To check whether the chain works,
-the Connection Test module send a TCP request
-from the packet generator and check if it gets response from Apache server.
-If the connection test is passed,
-the test is run and metric measurement begins.
-
-\item[\textbf{5.}]{}\textbf{Get the report}
-The Performance Monitor module does metric measurement
-and output a report.
-
-\end{itemize}
