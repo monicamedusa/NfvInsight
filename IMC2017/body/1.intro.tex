@@ -19,47 +19,54 @@ Thus NFV rapidly gained significant attentions by industry and academia. Plenty 
 %FTMB\cite{sherry_rollback-recovery_2015}
 %DFC\cite{194970}
 
-However, even though a suite of easy-to-use NFV benchmark is not yet existed. It is unavoidable to experience a time consuming process finding both open source software and proper chaining policies. According to our observation, most NFs used in papers are different open source implementations linked in different kinds of NF chain policies. So that, there is not yet a general baseline for measurement and comparison. Furthermore, the workload generator and network traffic trace used are also different, traces need to be provided to test different NF chains.
+However, although virtualization save much time of NFs management for us, building a NFV testbed still seems to be a time-consuming and annoying experience. We did a survey recently among experienced researchers on networking who claimed ever build a NFV testbed. Surprisingly, we find that it takes almost 1-2 months to build up a NF cluster with less than 10 VM instances. when the scale of instances increase to over 50, the buildup process extends to 3-4 months, or even more. One of our respondent said that they were still keeping on iterating and improving their testbed constantly. It is hard to imagine what a disaster it is for newcomers who intend to make some optimizations and contributions to the community. 
 
-We also did a survey among top conference researchers who have experiences setting up NFV environment. In our survey, we found that the deploying time varies much due to the scale. In average, it takes 1-2 months to build up a NF cluster having less than 10 VM instances. But when the scale of instances increase to over 50, the build up process can take 3-4 months or more. One of our respondent said that they were still keeping on iterating and improving their testbed constantly.
+Therefore, we think that the time is ripe to consider a NFV benchmark suite that aims to greatly simplify the process of building a NFV testbed, especially for the newcomers. To fulfill this goal, we need to address three questions:
+\textit{1) which are the representative NFs and NFs chains?} For the newcomers, it is frustrated to choose some representative NFs among NFs of various functions of various open source implementations. Besides, the order of NFs chained together is also important, and should be closed to the production environments as much as possible. Thus, the NFV benchmark should consist of a bunch of representative NFs and NFs chains widely accepted.
+2) How to accelerate the buildup process? The most disturbing part of buildup process is to install and configure all the NFs one by one, with endless package dependency and manual reading. We should leverage the benefit of virtualization which is ``build once, run everywhere''.
+3) what metrics should we collect and present? Last but not least, which metrics would be the proof of the measurement and demonstrate the effectiveness of the optimization?
+
+Considering these questions, we present \textbf{NFVInsight}, a suite of NF benchmarks that help users set up their own NFV testbeds easily and rapidly. NFVInsight has following characteristics:
+% However, even though a suite of easy-to-use NFV benchmark is not yet existed. It is unavoidable to experience a time consuming process finding both open source software and proper chaining policies. According to our observation, most NFs used in papers are different open source implementations linked in different kinds of NF chain policies. So that, there is not yet a general baseline for measurement and comparison. Furthermore, the workload generator and network traffic trace used are also different, traces need to be provided to test different NF chains.
 
 
 
-In this paper, we develop a suite of NF benchmarks, which is supposed to have the following characteristics: 1) Representing typical NFs 2) Easy to use 3) Plenty metrics for measurement.
+% We also did a survey among top conference researchers who have experiences setting up NFV environment. In our survey, we found that the deploying time varies much due to the scale. In average, it takes 1-2 months to build up a NF cluster having less than 10 VM instances. But when the scale of instances increase to over 50, the build up process can take 3-4 months or more. One of our respondent said that they were still keeping on iterating and improving their testbed constantly.
 
-According to our research and observation,
-the representative of an NFV benchmark
-should be satisfied in three aspects:
+
+
+% In this paper, we develop a suite of NF benchmarks, which is supposed to have the following characteristics: 1) Representing typical NFs 2) Easy to use 3) Plenty metrics for measurement.
+
+% According to our research and observation,
+% the representative of an NFV benchmark
+% should be satisfied in three aspects:
 %\begin{itemize}
 %\begin{enumerate}
 %\item{\textbf{Representative NFs.}}
-\textbf{1) Representative NFs.}
-For the demand of representative NFs,
+\textbf{1) Representative NFs \& NF chains.}
 we referred to the NFV Introductory White Paper \cite{},
-which defined ten scenario of NFV use cases.
+which defined ten scenarios of NFV use cases.
 In the first version of our benchmark,
 the open source implementation of NFs we collected
 covers half of the ten use cases.
 Table \ref{nfs} lists the basic information of NFs used in our benchmark.
 %\item{\textbf{Representative NF chains.}}
-\textbf{2) Representative NF chains.}
-However, not only single NFs should be typical, but also the NF chains.
-We referred to ETSI standard documents of SFC
+% \textbf{2) Representative NF chains.}
+For NF chains, we referred to ETSI standard documents of SFC
 (Service Function Chaining) \cite{draft-ietf-sfc-dc-use-cases-06}
 for the typical use case of service chains
 in the scenarios of both enterprise user and datacenter.
 %We also consulted our industrial partners for real world chaining policies.
 The typical NF chains our benchmark provides are listed in Table \ref{chains}.
 %\item{\textbf{Proper workload generator.}}
-\textbf{3) Proper workload generator.}
+\textbf{2) Proper workload generator.}
 Since each NF chain serves at different network level,
 only one workload generator is not enough to test all the scenarios.
 So we select different clients for each chain.
 %and fixed the content of each chain.
 %\end{itemize}
 %\end{enumerate}
-
-
+\textbf{3) Easy to use.}
 The goal of the `easy to use' design is to
 achieve one-week setting up as well as one-click test running,
 no matter the scale of the testing environment.
@@ -75,11 +82,15 @@ to implement chaining and flow control.
 %There are more complains pointing out their pain points: 1) Automate the setting up and testing process. 2) Configure and stabilize NFs (?). 3) Write rules to set up topology and enforce flow control.
 %%our design to solve the pain points????
 %`easy to use' design should solve pain points
-
+\textbf{4) Metrics.}
 In our benchmark, we provide the most concerned metrics for measurement,
 that is latency and throughput.
 We measure latency in the granularity of per-packet and per-NF,
 and output cumulative distribution of latency in the measurement report.
+
+\textbf{Contributions.} We make the following contributions:
+
+
 
 %The main contribution of our work is
 
