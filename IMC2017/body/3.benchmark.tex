@@ -185,14 +185,17 @@ We config it working under TCP mode to do L4 load balancing.
 Squid \cite{} is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages.
 \end{itemize}
 
-workload generator
+In our current version, we provide the following three workload generators.
+SipP is specific for Clearwater, 
+while Httperf and Polygraph are used to drive the service chains.
 \begin{itemize}
 \item{}
-Sipp
+SipP \cite{}
 \item{}
-Httperf
+Httperf \cite{}
 \item{}
-Polygraph
+Web Polygraph \cite{}
+is a freely available performance testing tool for caching proxies, origin server accelerators, L4/7 switches, content filters, and other Web intermediaries.
 \end{itemize}
 
 \subsection{VNF Chain}
@@ -267,6 +270,13 @@ for comparison experiments.
 
 \section{Implementation}
 \subsection{Multiple Server Network}
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.3in]{fig/network.pdf}
+\caption{Network of multiple server.}
+\label{design}
+\end{figure}
+
 
 
 \subsection{Auto Deploy}
