@@ -15,11 +15,11 @@ A suite of off-the-shelf benchmark can also
 reduce the time spent on NF selecting.
 
 In this paper, we introduce NfvInsight, an NFV testbed that meets these
-requirements. 
-In this section, we first describe the overall architect of our benchmark
-and the simple steps for a user to do deployment and testing.
-Then we introduce the NFs and chains we use.
-And give out possible use cases of our benchmark.
+requirements.
+In this section, we first describe the overall architect of NfvInsight
+and an brief instructions for a user to do deployment and testing.
+Then we introduce the current NFs and chains of NfvInsight as well as 
+potential use cases. 
 
 %So, a selected suite of representative VNF
 %with widely accepted chaining policy
@@ -61,17 +61,17 @@ And give out possible use cases of our benchmark.
 \label{config}
 \end{figure}
 
-The overall architecture of our benchmark is shown in Figure \ref{design}.
-It has three main parts, NFVI, NF services and NI.
+The overall architecture of NfvInsight benchmark is shown in Figure \ref{design}.
+It has three main parts, NFVI, NF services and NI (the core of NfvInsight).
 NFVI (NFV Infrastructure) consists of hardware resources
 including compute, storage and network.
 NF services are deployed upon NFVI, forming a service chain.
 To leverage docker's light-weight isolation
-and its convenience of packing a runtime environment,
+and convenience of packing a runtime environment,
 we chose to use Kubernetes as the infrastructure management framework,
 which manages the physical cluster as well as the dockers and images.
 OVS is used as the data path,
-and forwarding rules installed on OVS chains up the NF services.
+forwarding rules installed on OVS chains up the NF services.
 The details of our network settings will be introduced in section 4.1.
 
 NI (NfvInsight) is the key component of our benchmark
@@ -82,19 +82,19 @@ To simplify its usage,
 users are supposed to run only one command to start the test,
 and touch only two files,
 one configuration file and one measurement report.
-NI reads in the customer configuration file,
-parse it, and generate scripts to start docker, config network, and run NF.
+NI reads in the customer configuration file (shown in Figure \ref{config}),
+parse the file, and generate scripts to start docker, config network, and run NF.
 %It does NF allocation and chaining automatically leveraging NFVI management framework.
-Furthermore, it does connection test and performance monitoring during test running.
+Furthermore, the NI component is responsible for connection testing and performance monitoring 
+before regular tests. 
 
-The process for a researcher to use the benchmark includes five simple steps:
+The process for a researcher to use the benchmark includes five steps:
 
 \begin{itemize}
-\item[\textbf{1.}]{}\textbf{Run the pre-install script.}
-
-In our benchmark, a pre-install script is provided to
-help users install the prerequisite framework including Kubernetes and OVS
-and do some configuration.
+\item[\textbf{1.}]{}\textbf{Run a pre-installed script.}
+In our benchmark, a pre-installed script is provided to
+help users install the prerequisite frameworks including Kubernetes and OVS
+and complete configuration automatically.
 %In the first step, users need to install Kubernetes, OVS
 %and Openflow controller for their physical server cluster.
 %Kubernetes is an open-source system for automating deployment, scaling,
@@ -102,30 +102,26 @@ and do some configuration.
 %To force forwarding packets cross nodes,
 %OVS bridge and Openflow global control is needed.
 
-\item[\textbf{2.}]{}\textbf{Run the image-building script.}
+\item[\textbf{2.}]{}\textbf{Download NF images or run an image-building script to build your owns.}
+NfvInsight already provides several docker images. Alternatively, users can run a script to build 
+his own image locally. The image-building script helps build images listed in Table \ref{nfs} from DOCKERFILE, and setup a private image registry for docker creation in distributed cluster.
 
-The image-building script helps build images listed in Table \ref{nfs} from DOCKERFILE, and setup a private image registry
-for docker creation in distributed cluster.
-
-\item[\textbf{3.}]{}\textbf{Write config file.}
-
-This config file is the only file needs user edit.
-We provide a config template for each chain
+\item[\textbf{3.}]{}\textbf{Modify a configuration file.}
+This configuration file is the only file needs user to edit.
+NfvInsight provides a config template for each chain
 designed in a uniform concise format shown in Figure \ref{config}.
 The configurable variable includes resource of each docker,
 mapping between physical server and docker,
 number of NF instances, and other NF specific configurations.
 
-\item[\textbf{4.}]{}\textbf{Run test with one click.}
-
+\item[\textbf{4.}]{}\textbf{Run test with one command.}
 Users can run the test by executing only one command.
 NI does a series automate processes.
 The details will be introduced in section 4.2.
 
 \item[\textbf{5.}]{}\textbf{Get the report.}
-
 The Performance Monitor module does metric measurement
-and output a report.
+and outputs a report.
 
 \end{itemize}
 
@@ -188,7 +184,7 @@ Squid \cite{Squid} is a caching proxy for the Web supporting HTTP, HTTPS, FTP, a
 \end{itemize}
 
 In our current version, we provide the following three workload generators.
-SipP is specific for Clearwater, 
+SipP is specific for Clearwater,
 while Httperf and Polygraph are used to drive the service chains.
 \begin{itemize}
 \item{}
