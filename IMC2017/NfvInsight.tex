@@ -189,24 +189,18 @@
 
 
 \begin{abstract}
-Network function virtualization (NFV) is promising to 
-lower capital costs for networking operators by replacing 
-traditional hardware-based appliance with virtualized network functions
-deployed in cloud computing environment.
-Thus NFV is attracting more and more interest in both industry and academia.
-Unfortunately, setting up an NFV environment is non-trivial. 
-Even for the purpose of NFV research, it takes 1-2 human-month
-to make NFV environments work, according to a quick survey that 
-receive feedback from authors of many SIGCOMM/NSDI papers. 
-To facilitate NFV research, we introduce NfvInsight, 
+Network function virtualization (NFV) has been gaining
+more and more attention in both industry and academia.
+Unfortunately, setting up an NFV environment is non-trivial.
+By surveying authors of many SIGCOMM/NSDI papers, 
+we learn that making NFV environments work actually is the most painful step
+during these phd students' research and usually takes 1-2 human-month or even longer.
+To facilitate NFV research, we introduce NfvInsight,
 an NFV benchmark suite that features representative virtual network functions (VNFs),
-one-click deployment and plenty metrics. Specifically, 
-NfvInsight pre-defined a couple of representative VNFs and VNF-chains 
-and leverages Kubernetes and docker to ease the processes
-of VNF image packaging, virtualization management,
-network configuration, forwarding rule installation and so forth. 
-NfvInsight provides network traffic generators to drive NF-chains
-and collect performance metrics. 
+one-click deployment and plenty metrics. Specifically,
+NfvInsight provides a couple of representative VNFs and VNF-chains
+and leverages Kubernetes and docker to ease VNF image packaging, virtualization management,
+network configuration, generating network traffic and forwarding rule installation and so forth.
 In this paper, we present a work-in-progress version of NfvInsight that
 currently includes five VNFs %covering half of the NFV use cases,
 and four typical VNF chains. Preliminary experiments demonstrate
