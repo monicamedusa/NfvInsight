@@ -135,7 +135,7 @@ and output a report.
 \centering
 \begin{tabular}{|c|c|c|}\hline
 \textbf{Category} & \textbf{NF} & \tabincell{c}{\textbf{Workload}\\\textbf{Generator}}\\\hline
-IMS & Clearwater & SipP \\\hline
+IMS & Clearwater & SIPps \\\hline
 IDS & Snort & \multirow{2}{*}{Httperf} \\\cline{1-2}
 NAT & iptables & \\\cline{1-2}
 L4 Load Balancer & Haproxy & \multirow{2}{*}{Polygraph} \\\cline{1-2}
@@ -185,14 +185,19 @@ We config it working under TCP mode to do L4 load balancing.
 Squid \cite{Squid} is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages.
 \end{itemize}
 
-workload generator
+In our current version, we provide the following three workload generators.
+SipP is specific for Clearwater, 
+while Httperf and Polygraph are used to drive the service chains.
 \begin{itemize}
 \item{}
-Sipp
+SIPp \cite{}
+is a free Open Source test tool / traffic generator for the SIP protocol.
 \item{}
-Httperf
+Httperf \cite{}
+is a tool for measuring web server performance. It provides a flexible facility for generating various HTTP workloads and for measuring server performance.
 \item{}
-Polygraph
+Web Polygraph \cite{}
+is a freely available performance testing tool for caching proxies, origin server accelerators, L4/7 switches, content filters, and other Web intermediaries.
 \end{itemize}
 
 \subsection{VNF Chain}
@@ -267,6 +272,13 @@ for comparison experiments.
 
 \section{Implementation}
 \subsection{Multiple Server Network}
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.3in]{fig/network.pdf}
+\caption{Network of multiple server.}
+\label{design}
+\end{figure}
+
 
 
 \subsection{Auto Deploy}
