@@ -128,7 +128,7 @@ and outputs a report.
 
 \subsection{VNF}
 
-\begin{table}[!b]
+\begin{table}[!htbp]
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
 \centering
 \begin{tabular}{|c|c|c|}\hline
@@ -200,7 +200,7 @@ is a freely available performance testing tool for caching proxies, origin serve
 
 \subsection{VNF Chain}
 
-\begin{table*}[!t]
+\begin{table*}[!htbp]
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
 \centering
 \begin{tabular}{|l|l|l|}\hline
@@ -264,9 +264,9 @@ Web Optimization Control (WOC): Service functions to optimize the use of WAN lin
 % \end{figure}
 
 
-\subsection{Use Case for NfvInsight}
-First, for all these researches, a universally used baseline is lacked
-for comparison experiments.
+%\subsection{Use Case for NfvInsight}
+%First, for all these researches, a universally used baseline is lacked
+%for comparison experiments.
 
 \section{Implementation}
 NI is the core component of our benchmark,
@@ -279,11 +279,10 @@ as well as detailed implementation of NI.
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3.3in]{fig/network.pdf}
+\includegraphics[width=2.7in]{fig/network.pdf}
 \caption{Network of multiple server.}
 \label{network}
 \end{figure}
-
 
 The network environment NI works on is shown in Figure \ref{network}. 
 To setup a multiple server test environment, 
@@ -293,12 +292,17 @@ to guarantee Kubernetes management and communication between dockers.
 Because NFs needs forwarding control of flows, 
 OVS and Openflow rules are needed. 
 We setup OVS bridges and VxLAN connection in the pre-install script.
-To setup 
-
+To setup data path for VNF, NI creates virtual net devices for dockers 
+and  connect them to OVS bridge. 
+The route marked in grey in Figure \ref{network} indicates the 
+date path between VNFs.
 
 \subsection{Auto Deploy}
-First it reads the configuration file edited by users and rewrites the related scripts,
-which including container deployment scripts and NF config files.
+To implement auto deployment, 
+NI reads the configuration file edited by users shown in Figure \ref{config} 
+and generate four types of scripts,
+which includes SFC starting and delete scripts, 
+docker resource definition file, and config file for specific NF.
 Then the NF Allocation module deploys containers according to user configuration.
 When containers are started and their status turn to `ready',
 NF Chaining module adds virtual NIC for each container,
@@ -309,5 +313,10 @@ the Connection Test module send a TCP request
 from the packet generator and check if it gets response from Apache server.
 If the connection test is passed,
 the test is run and metric measurement begins.
-\subsection{Measurement}
+
+%\subsection{Measurement}
+
+
+
+
 
