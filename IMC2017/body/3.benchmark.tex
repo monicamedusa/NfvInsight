@@ -67,7 +67,8 @@ OVS is used as the data path,
 and forwarding rules installed on OVS chains up the NF services.
 The details of our network settings will be introduced in section 4.1.
 
-NI (NfvInsight) is the key component of our benchmark, 
+NI (NfvInsight) is the key component of our benchmark 
+(highlighted in grey in Figure  \ref{design}), 
 which consists of a bunch of scripts 
 to automate the process of NF chain deployment.
 To simplify its usage, 
@@ -83,44 +84,35 @@ The process for a researcher to use the benchmark includes five simple steps:
 
 \begin{itemize}
 \item[\textbf{1.}]{}\textbf{Run the pre-install script.}
-In the first step, users need to install Kubernetes, OVS
-and Openflow controller for their physical server cluster.
+
+In our benchmark, a pre-install script is provided to 
+help users install the prerequisite framework including Kubernetes and OVS
+and do some configuration. 
+%In the first step, users need to install Kubernetes, OVS
+%and Openflow controller for their physical server cluster.
 %Kubernetes is an open-source system for automating deployment, scaling,
 %and management of containerized applications.
 %To force forwarding packets cross nodes,
 %OVS bridge and Openflow global control is needed.
 
-\item[\textbf{2.}]{}\textbf{Run the image building script.}
-We provide DOCKERFILE to build images for each VNF listed in Table \ref{nfs},
-A private registry is needed to manage the images,
-so that Kubernetes can create containers distributely using local images.
+\item[\textbf{2.}]{}\textbf{Run the image-building script.}
+
+The image-building script helps build images listed in Table \ref{nfs} from DOCKERFILE, and setup a private image registry 
+for docker creation in distributed cluster.
 
 \item[\textbf{3.}]{}\textbf{Write config file.}
+
 This config file is the only file needs user edit.
-It includes choice of testing chain,
-mapping between physical server and docker,
-resource configuration of each docker,
-host network and other NF specific configurations.
-To config each NF working in the demanded mode,
-we provide pre-written config files for each NF.
+
 
 \item[\textbf{4.}]{}\textbf{Run test with one click.}
+
 Users can run the test by executing only one command.
 NI does a series automate processes.
-First it reads the configuration file edited by users and rewrites the related scripts,
-which including container deployment scripts and NF config files.
-Then the NF Allocation module deploys containers according to user configuration.
-When containers are started and their status turn to `ready',
-NF Chaining module adds virtual NIC for each container,
-connects them to OVS bridge,
-and installs Openflow forwarding rules according to the chaining policy.
-To check whether the chain works,
-the Connection Test module send a TCP request
-from the packet generator and check if it gets response from Apache server.
-If the connection test is passed,
-the test is run and metric measurement begins.
+
 
 \item[\textbf{5.}]{}\textbf{Get the report.}
+
 The Performance Monitor module does metric measurement
 and output a report.
 
@@ -135,9 +127,9 @@ and output a report.
 \begin{tabular}{|c|c|c|}\hline
 \textbf{Category} & \textbf{NF} & \tabincell{c}{\textbf{Workload}\\\textbf{Generator}}\\\hline
 IMS & Clearwater & SipP \\\hline
-IDS & Snort & \multirow{4}{*}{Httperf} \\\cline{1-2}
+IDS & Snort & \multirow{2}{*}{Httperf} \\\cline{1-2}
 NAT & iptables & \\\cline{1-2}
-L4 Load Balancer & Haproxy & \\\cline{1-2}
+L4 Load Balancer & Haproxy & \multirow{2}{*}{Polygraph} \\\cline{1-2}
 L7 Cache & Squid & \\\hline
 \end{tabular}
 \caption{NFs included in our benchmark.}
@@ -258,6 +250,24 @@ for comparison experiments.
 \subsection{Multiple Server}
 \subsection{Image Registry}
 \subsection{Config File}
+It includes choice of testing chain,
+mapping between physical server and docker,
+resource configuration of each docker,
+host network and other NF specific configurations.
+To config each NF working in the demanded mode,
+we provide pre-written config files for each NF.
 \subsection{Auto Deploy}
+First it reads the configuration file edited by users and rewrites the related scripts,
+which including container deployment scripts and NF config files.
+Then the NF Allocation module deploys containers according to user configuration.
+When containers are started and their status turn to `ready',
+NF Chaining module adds virtual NIC for each container,
+connects them to OVS bridge,
+and installs Openflow forwarding rules according to the chaining policy.
+To check whether the chain works,
+the Connection Test module send a TCP request
+from the packet generator and check if it gets response from Apache server.
+If the connection test is passed,
+the test is run and metric measurement begins.
 \subsection{Measurement}
 
