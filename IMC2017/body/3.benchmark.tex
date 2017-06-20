@@ -137,7 +137,7 @@ and output a report.
 \centering
 \begin{tabular}{|c|c|c|}\hline
 \textbf{Category} & \textbf{NF} & \tabincell{c}{\textbf{Workload}\\\textbf{Generator}}\\\hline
-IMS & Clearwater & SipP \\\hline
+IMS & Clearwater & SIPps \\\hline
 IDS & Snort & \multirow{2}{*}{Httperf} \\\cline{1-2}
 NAT & iptables & \\\cline{1-2}
 L4 Load Balancer & Haproxy & \multirow{2}{*}{Polygraph} \\\cline{1-2}
@@ -171,30 +171,35 @@ The following are the brief introduction of the VNF:
 Clearwater \cite{noauthor_project_nodate} is an open source implementation of IMS (the IP Multimedia Subsystem) designed from the ground up for massively scalable deployment in the Cloud to provide voice, video and messaging services to millions of users.
 
 \item{}
-Snort \cite{} is an open source intrusion prevention system
+Snort \cite{snort} is an open source intrusion prevention system
 capable of real-time traffic analysis and packet logging.
 We config it working under intrusion detection model.
 
 \item{}
-Iptables \cite{}
+Iptables \cite{Iptables}
 We set particular rule to use iptables as DNAT and SNAT.
 
 \item{}
-Haproxy \cite{} is a reliable, high performance TCP or HTTP load balancer.
+Haproxy \cite{HAProxy} is a reliable, high performance TCP or HTTP load balancer.
 We config it working under TCP mode to do L4 load balancing.
 
 \item{}
-Squid \cite{} is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages.
+Squid \cite{Squid} is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages.
 \end{itemize}
 
-workload generator
+In our current version, we provide the following three workload generators.
+SipP is specific for Clearwater, 
+while Httperf and Polygraph are used to drive the service chains.
 \begin{itemize}
 \item{}
-Sipp
+SIPp \cite{SIPp}
+is a free Open Source test tool / traffic generator for the SIP protocol.
 \item{}
-Httperf
+Httperf \cite{Httperf}
+is a tool for measuring web server performance. It provides a flexible facility for generating various HTTP workloads and for measuring server performance.
 \item{}
-Polygraph
+Web Polygraph \cite{web-polygraph}
+is a freely available performance testing tool for caching proxies, origin server accelerators, L4/7 switches, content filters, and other Web intermediaries.
 \end{itemize}
 
 \subsection{VNF Chain}
@@ -269,6 +274,13 @@ for comparison experiments.
 
 \section{Implementation}
 \subsection{Multiple Server Network}
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.3in]{fig/network.pdf}
+\caption{Network of multiple server.}
+\label{design}
+\end{figure}
+
 
 
 \subsection{Auto Deploy}
