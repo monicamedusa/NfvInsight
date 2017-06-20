@@ -284,8 +284,16 @@ as well as detailed implementation of NI.
 \label{network}
 \end{figure}
 
-The network environment NI works on is shown in Figure \ref{network}.
-To
+
+The network environment NI works on is shown in Figure \ref{network}. 
+To setup a multiple server test environment, 
+a LAN connection between servers is prerequisite. 
+After Kubernetes installation, a Linux bridge named docker0 is setup 
+to guarantee Kubernetes management and communication between dockers.
+Because NFs needs forwarding control of flows, 
+OVS and Openflow rules are needed. 
+We setup OVS bridges and VxLAN connection in the pre-install script.
+To setup 
 
 
 \subsection{Auto Deploy}
