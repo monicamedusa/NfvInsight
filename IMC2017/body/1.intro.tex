@@ -3,12 +3,12 @@ Emerging network function virtualization (NFV) was initiated to replace hardware
 % With the help of virtualization, we could manage multiple virtual network functions directly by standards virtualization management tools, as Openstack and K8s. could be directly managed by virtualization management tools, as Openstack, K8s.
 % Virtualization bring much advantages to network functions, as ease of deployment, live migration, and so forth.
 It is really exciting to encapsulate network functions into VMs, multiplexing underlying commodity, general purpose processors rather than dedicated physical boxes.
-Thus NFV rapidly gained significant attentions by industry and academia. Plenty of works devote much effort to simplify building, deploying and managing NFs, like OpenNF \cite{gember-jacobson_opennf:_2014}, CoMb \cite{180672} and E2 \cite{palkar_e2:_2015}, or rewrite efficient NFs, like OpenBox \cite{bremler-barr_openbox:_2016} and Netbricks \cite{199352}.
+Thus NFV rapidly gains significant attention by industry and academia. Plenty of works has devoted much effort to simplify building, deploying and managing NFs, like OpenNF \cite{gember-jacobson_opennf:_2014}, CoMb \cite{180672} and E2 \cite{palkar_e2:_2015}, or rewriting efficient NFs, like OpenBox \cite{bremler-barr_openbox:_2016} and Netbricks \cite{199352}.
 
 % Network function virtualization (NFV) has become a hot topic, both in industry and academia.
-% Since the publication of NFV Introductory White Paper \cite{} of ETSI in 2012, a lot of works have been emerged in this field. 
-% Modification works of NFV were done on the whole software stack (or maybe both SW and HW stack?). 
-% There are de facto industrial NFV platform OPNFV \cite{noauthor_home_nodate} as well as advanced NF allocation frameworks like OpenNF \cite{gember-jacobson_opennf:_2014}, CoMb \cite{180672} and E2 \cite{palkar_e2:_2015}. 
+% Since the publication of NFV Introductory White Paper \cite{} of ETSI in 2012, a lot of works have been emerged in this field.
+% Modification works of NFV were done on the whole software stack (or maybe both SW and HW stack?).
+% There are de facto industrial NFV platform OPNFV \cite{noauthor_home_nodate} as well as advanced NF allocation frameworks like OpenNF \cite{gember-jacobson_opennf:_2014}, CoMb \cite{180672} and E2 \cite{palkar_e2:_2015}.
 % Also, there are works like OpenBox \cite{bremler-barr_openbox:_2016} and Netbricks \cite{199352} to rewrite or modify the NFs.
 
 %Embark\cite{194934}
@@ -19,7 +19,7 @@ Thus NFV rapidly gained significant attentions by industry and academia. Plenty 
 %FTMB\cite{sherry_rollback-recovery_2015}
 %DFC\cite{194970}
 
-However, although virtualization save much time of NFs management for us, building a NFV testbed still seems to be a time-consuming and annoying experience. We did a survey recently among experienced researchers on networking who claimed ever build a NFV testbed. Surprisingly, we find that it takes almost 1-2 months to build up a NF cluster with less than 10 VM instances. when the scale of instances increase to over 50, the buildup process extends to 3-4 months, or even more. One of our respondent said that they were still keeping on iterating and improving their testbed constantly. It is hard to imagine what a disaster it is for newcomers who intend to make some optimizations and contributions to the community. 
+However, although virtualization saves much time of NFs management for us, building a NFV testbed still seems to be a time-consuming and annoying experience. Recently we surveyed experienced researchers on networking who claimed ever build a NFV testbed. Surprisingly, we find that it takes almost 1-2 months to build up a NF cluster with less than 10 VM instances. When the scale of instances increases to over 50, the time extends to 3-4 months, or even more. One of our respondent said that they were still keeping on iterating and improving their testbed constantly. It is hard to imagine what a painful experience it is for newcomers who intend to participate into the NFV research community.
 
 Therefore, we think that the time is ripe to consider a NFV benchmark suite that aims to greatly simplify the process of building a NFV testbed, especially for the newcomers. To fulfill this goal, we need to address three questions:
 \textit{1) which are the representative NFs and NFs chains?} For the newcomers, it is frustrated to choose some representative NFs among NFs of various functions of various open source implementations. Besides, the order of NFs chained together is also important, and should be closed to the production environments as much as possible. Thus, the NFV benchmark should consist of a bunch of representative NFs and NFs chains widely accepted.
